@@ -114,12 +114,19 @@ figure {
 .ftco-nav .top-menu {
   padding: 18px 0;
 }
-html {
-  scroll-behavior: smooth;
+.ftco-nav #ftco-logo {
+  font-size: 24px;
+  margin: 0;
+  padding: 0;
+  text-transform: uppercase;
+  position: relative;
+  font-weight: bold;
+  font-weight: 700;
+  font-family: "Work Sans", Arial, sans-serif;
 }
-.ftco-nav #ftco-logo image {
-  width: 50px;
-  height: 50px;
+.ftco-nav image {
+  width: 200px;
+  height: auto;
   position: absolute;
   left: 0;
 }
@@ -128,6 +135,8 @@ html {
 }
 .ftco-nav a {
   padding: 5px 10px;
+  font-weight: 800;
+  font-size: 28px;
   color: #fff;
 }
 @media screen and (max-width: 992px) {
@@ -147,7 +156,7 @@ html {
   text-transform: uppercase;
 }
 .ftco-nav ul li > a {
-  font-size: 13px;
+  font-size: 18px;
   letter-spacing: 0.1em;
   padding: 30px 15px;
   color: rgba(255, 255, 255, 0.7);

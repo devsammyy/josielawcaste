@@ -31,7 +31,7 @@
 
 	    	if ( $('body').hasClass('offcanvas') ) {
 
-    			$('body').removeClass('offcanvas');
+    			$('body').removeClass('offcanvas overflow');
     			$('.js-ftco-nav-toggle').removeClass('active');
 				
 	    	}
@@ -43,65 +43,19 @@
 	};
 
 
-	var offcanvasMenu = function() {
+	
 
-		$('#page').prepend('<div id="ftco-offcanvas" />');
-		$('#page').prepend('<a href="#" class="js-ftco-nav-toggle ftco-nav-toggle ftco-nav-white"><i></i></a>');
-		var clone1 = $('.menu-1 > ul').clone();
-		$('#ftco-offcanvas').append(clone1);
-		var clone2 = $('.menu-2 > ul').clone();
-		$('#ftco-offcanvas').append(clone2);
+	
+	
+	var fullHeight = function() {
 
-		$('#ftco-offcanvas .has-dropdown').addClass('offcanvas-has-dropdown');
-		$('#ftco-offcanvas')
-			.find('li')
-			.removeClass('has-dropdown');
+		if ( !isMobile.any() ) {
+			$('.js-fullheight').css('height', $(window).height());
+			$(window).resize(function(){
+				$('.js-fullheight').css('height', $(window).height());
+			});
+		}
 
-		// Hover dropdown menu on mobile
-		$('.offcanvas-has-dropdown').mouseenter(function(){
-			var $this = $(this);
-
-			$this
-				.addClass('active')
-				.find('ul')
-				.slideDown(500, 'easeOutExpo');				
-		}).mouseleave(function(){
-
-			var $this = $(this);
-			$this
-				.removeClass('active')
-				.find('ul')
-				.slideUp(500, 'easeOutExpo');				
-		});
-
-
-		$(window).resize(function(){
-
-			if ( $('body').hasClass('offcanvas') ) {
-
-    			$('body').removeClass('offcanvas');
-    			$('.js-ftco-nav-toggle').removeClass('active');
-				
-	    	}
-		});
-	};
-
-
-	var burgerMenu = function() {
-
-		$('body').on('click', '.js-ftco-nav-toggle', function(event){
-			var $this = $(this);
-
-
-			if ( $('body').hasClass('overflow offcanvas') ) {
-				$('body').removeClass('overflow offcanvas');
-			} else {
-				$('body').addClass('overflow offcanvas');
-			}
-			$this.toggleClass('active');
-			event.preventDefault();
-
-		});
 	};
 
 	var fullHeight = function() {
@@ -282,11 +236,51 @@
 
 	};
 
+
+
+// Get the modal element
+var modal = document.getElementById("myModal");
+
+// Get all "Read more" links
+var readMoreLinks = document.querySelectorAll(".read-more");
+
+// Add an event listener to each "Read more" link
+readMoreLinks.forEach(function(link) {
+  link.addEventListener("click", function(event) {
+    event.preventDefault(); // Prevent default link behavior
+
+    // Get the name and bio data from the link
+    var name = link.getAttribute("data-name");
+    var bio = link.getAttribute("data-bio");
+
+    // Populate the modal content
+    document.getElementById("modal-name").innerHTML = name;
+    document.getElementById("modal-bio").innerHTML = bio;
+
+    // Show the modal
+    $(modal).modal("show"); 
+
+    // Add an overlay to the body
+    document.body.classList.add("modal-open");
+
+	$(modal).on("hidden.bs.modal", function() {
+		document.body.classList.remove("modal-open");
+	  });
+		
+  });
+});
+document.body.classList.toggle('show');
+const navbarToggle = document.querySelector('.navbar-toggler');
+const navbarCollapse = document.querySelector('.navbar-collapse');
+
+navbarToggle.addEventListener('click', () => {
+  navbarCollapse.classList.toggle('show');
+});
 	
+	// Add an event listener to the modal to remove the overlay when it's closed
 	$(function(){
 		mobileMenuOutsideClick();
-		offcanvasMenu();
-		burgerMenu();
+		
 		contentWayPoint();
 		sliderMain();
 		dropdown();
@@ -301,3 +295,5 @@
 
 
 }());
+
+

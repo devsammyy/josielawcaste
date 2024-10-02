@@ -49,21 +49,31 @@
     <!--[if lt IE 9]>
       <script src="js/respond.min.js"></script>
     <![endif]-->
+
+
+    <!-- Aos -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
   </head>
 
   <body>
     <div class="ftco-loader"></div>
 
     <div id="page">
-      <nav class="ftco-nav navbar navbar-expand-lg">
-        <div class="container mx-auto d-flex align-items-center">
-          <div class="logo">
-            <a class="navbar-brand md:fs-1" href="index.html"
-              >JOSIE LAWCASTLE</a
-            >
-            <p class="extra">A Lawfirm Extraordinaire</p>
-          </div>
 
+    
+
+      <nav id="navbarToggleExternalContent" class="ftco-nav navbar navbar-expand-lg navbar-dark">
+        <div class="container-fluid mx-auto d-flex align-items-center">
+          <div class="logo d-flex flex-column justify-content-center align-items-center">
+            <img src="images/logo3.png" style="width: 50px;" class="img-thumbnail" alt="">
+            <div>
+              <a class="navbar-brand md:fs-1" href="index.html"
+                >JOSIE LAWCASTLE</a
+              >
+              <p class="extra">A Lawfirm Extraordinaire</p>
+            </div>
+          </div>
+      
           <button
             class="navbar-toggler"
             type="button"
@@ -72,7 +82,6 @@
             aria-controls="navbarSupportedContent"
             aria-expanded="false"
             aria-label="Toggle navigation"
-            style="display: block"
           >
             <span class="navbar-toggler-icon"></span>
           </button>
@@ -97,6 +106,10 @@
                 <a class="nav-link" href="#contact">Contact</a>
               </li>
             </ul>
+            <button type="button" class="btn-close btn-close-white close-btn" aria-label="Close">
+
+
+            </button>
           </div>
         </div>
       </nav>
@@ -106,10 +119,7 @@
           <ul class="slides">
             <li
               style="
-                background-image: url(images/ip.jpg);
-                background-size: cover;
-                background-position: center;
-                object-fit: cover;
+              background-image: url(images/hr2.jpg);
               "
             >
               <div class="overlay-gradient"></div>
@@ -121,8 +131,8 @@
                     <div class="slider-text-inner">
                       <h1>
                         <strong
-                          >Defend Your Constitutional Right with Legal
-                          Help</strong
+                          >Get all your business and corporate legal needs seamlessly taken care of by us  and boast of a  thriving result.
+                          </strong
                         >
                       </h1>
                       <p>
@@ -155,7 +165,8 @@
                     <div class="slider-text-inner text-center">
                       <h1>
                         <strong
-                          >Facing Criminal Charges? We’ve Got Your Back!</strong
+                          >Trust us to protect your intellectual assets. We're your reliable legal shield to keep you ahead of your competitors
+                          </strong
                         >
                       </h1>
                       <p>
@@ -179,7 +190,7 @@
                   >
                     <div class="slider-text-inner">
                       <h1>
-                        <strong>Real Estate Transactions You Can Trust</strong>
+                        <strong>Enjoy peace of mind  with our expert real estate legal solutions and guides.</strong>
                       </h1>
                       <p>
                         <a
@@ -197,27 +208,27 @@
         </div>
       </aside>
       <div class="site-section" id="#about">
-        <div class="container mx-auto animate-box">
+        <div class="container mx-auto " data-aos="fade-up">
           <h5 class="text-center mb-4 about-us fw-normal">About us</h5>
           <div class="row">
             <div class="col-md-6">
               <img src="images/team1.jpg" alt="About us" class="img-fluid" />
             </div>
             <div class="col-md-6 mt-3 mt-md-0">
-              <p class="text-justify">
+              <p class="text-justify" data-aos="fade-right">
                 Josie Lawcastle (JLC) is one of the youngest leading full
                 service law firm in Nigeria, committed to providing zenith legal
                 services in Nigeria, Africa, and globally while meeting the
                 legal needs and demands of our esteemed clients.
               </p>
-              <p class="text-justify">
+              <p class="text-justify" data-aos="fade-in">
                 The law firm comprises a team of vibrant,, innovative, and
                 competent Legal Practitioners who have emerged in this 21st
                 century to provide professional services with little to
                 reservation. Thus, JLC is mindful of modern day demands and the
                 diversity that comes with it.
               </p>
-              <p class="text-justify">
+              <p class="text-justify" data-aos="fade-left">
                 JLC pioneered in January 2022 is headed and founded by Josephine
                 Aransiola. Our legal team members are spread across the country
                 and outside.
@@ -228,7 +239,7 @@
       </div>
       <div class="container mx-auto row">
         <!-- Our mission section -->
-        <div class="col-md-6 text-center animate-box">
+        <div class="col-md-6 text-center " data-aos="fade-up">
           <div class="services">
             <span class="icon">
               <i class="flaticon-jury"></i>
@@ -246,7 +257,7 @@
         <!-- Our mission section ends -->
 
         <!-- Our vision section starts -->
-        <div class="col-md-6 text-center animate-box">
+        <div class="col-md-6 text-center " data-aos="fade-up">
           <div class="services">
             <span class="icon">
               <i class="flaticon-lawyer"></i>
@@ -264,7 +275,7 @@
       <!-- Service 1 - Bootstrap Brain Component -->
       <section class="py-5 py-xl-8" id="practice">
 
-        <div class="container animate-box">
+        <div class="container " data-aos="fade-up">
           <div class="row justify-content-md-center">
             <div class="col-12 col-md-10 col-lg-8 col-xl-7 col-xxl-6">
               <h2 class="mb-4 display-5 text-center">Areas of Expertise</h2>
@@ -280,7 +291,7 @@
         <div class="container overflow-hidden">
           <div class="row gy-2 gx-5 p-md-0 p-4">
              
-                <div class="col-12 col-sm-6 services col-lg-4 animate-box">
+                <div class="col-12 col-sm-6 services col-lg-4 " data-aos="fade-up">
                   <a class="read-more" href="#"
                   data-name="Corporate Services"
                   data-bio='<p class="text-lg font-bold ">
@@ -354,17 +365,15 @@
                         />
                       </svg>
                       <h5 class="m-2 fs-3 fw-normal">Corporate</h5>
-                      <!-- <p class="m-0 text-secondary">
-                            We can help you to improve your website's visibility in search
-                            engine results pages (SERPs). This can lead to more traffic to
-                            your website.
-                          </p> -->
+                      <p class="m-0 text-primary">
+                            Click to read more
+                          </p>
                     </div>
                   </div>
                 </a>
                 </div>
 
-                <div class="col-12 col-sm-6 services col-lg-4 animate-box">
+                <div class="col-12 col-sm-6 services col-lg-4 " data-aos="fade-up">
                   <a href="#" class="read-more" data-name="Intellectual Property (IP)" data-bio='       
                   <p class="text-lg font-bold mb-2 ">
                     Services Offered:
@@ -406,13 +415,15 @@
                           />
                         </svg>
                         <h5 class="m-2 fs-3 fw-normal">Intellectual Property</h5>
-                    
+                        <p class="m-0 text-primary">
+                          Click to read more
+                        </p>
                       </div>
                     </div>
                   </a>
                 </div>
 
-                <div class="col-12 col-sm-6 services col-lg-4 animate-box">
+                <div class="col-12 col-sm-6 services col-lg-4 " data-aos="fade-up">
                   <a href="#" class="read-more" data-name="Real Estate" data-bio=' <h3 class="text-xl font-bold mt-8 mb-4  text-justify">
                     Property Law Practice
                   </h3>
@@ -429,11 +440,9 @@
                           <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0Zm-8.082.414c.92 0 1.535.54 1.541 1.318.012.791-.615 1.36-1.588 1.354-.861-.006-1.482-.469-1.54-1.066H5.104c.047 1.177 1.05 2.144 2.754 2.144 1.653 0 2.954-.937 2.93-2.396-.023-1.278-1.031-1.846-1.734-1.916v-.07c.597-.1 1.505-.739 1.482-1.876-.03-1.177-1.043-2.074-2.637-2.062-1.675.006-2.59.984-2.625 2.12h1.248c.036-.556.557-1.054 1.348-1.054.785 0 1.348.486 1.348 1.195.006.715-.563 1.237-1.342 1.237h-.838v1.072h.879Z" />
                         </svg>
                         <h5 class="m-2 fs-3 fw-normal">Real Estate</h5>
-                        <!-- <p class="m-0 text-secondary">
-                              We can help you to design and develop a new website, or to
-                              update your existing website. We specialize in creating
-                              user-friendly websites.
-                            </p> -->
+                        <p class="m-0 text-primary">
+                          Click to read more
+                        </p>
                       </div>
                     </div>
                   </a>
@@ -442,16 +451,15 @@
           </div>
         </div>
       </section>
-      <div class="container py-8 px-4 md:px-24">
+      <div class="container px-4 md:px-24">
         <div class="max-w-6xl mx-auto">
-          <h1 class="fs-5 fw-normal text-center fs-md-3 my-lg-5 animate-box">
-            We also then have other areas of legal services which are
-            by-products of the big 3.
+          <h1 class="fs-5 fw-normal text-center fs-md-3 my-lg-5 " data-aos="fade-up">
+            Other legal services which are by-products of the big 3:
           </h1>
-          <h3 class="text-xl fw-normal mt-8 mb-2 animate-box text-justify">
+          <h3 class="text-xl fw-normal mt-8 mb-2  text-justify"  data-aos="fade-up">
             General Litigation
           </h3>
-          <p class="animate-box text-justify">
+          <p class="  text-justify" data-aos="fade-up">
             We provide legal advice and representation to individual and
             corporate organizations in disputes arising from their personal and
             business activities. <a href="" data-bio='<p class="text-justify">We institute and defend different forms of
@@ -464,10 +472,10 @@
             extensive practice in the various High Courts in Nigeria.</p>'
             class="read-more">read more</a>
           </p>
-          <h3 class="text-xl fw-normal mt-8 mb-2 animate-box text-justify">
+          <h3 class="text-xl fw-normal mt-8 mb-2   text-justify" data-aos="fade-up">
             Probate Services
           </h3>
-          <p class="animate-box fw-normal text-justify">
+          <p class=" fw-normal text-justify" >
             We primarily focus on assisting Applicants in obtaining Letters of
             Administration for estates where the deceased passed away without a
             valid will (intestate). <a href=""data-bio='<p class="text-justify">Our team ensures a smooth and efficient
@@ -475,23 +483,23 @@
               and distribute the estate of their late loved ones in accordance
               with the law.</p>' class="read-more">read more</a>
           </p>
-          <h3 class="text-xl  fw-normal mt-8 mb-2 animate-box text-justify">
+          <h3 class="text-xl  fw-normal mt-8 mb-2   text-justify" data-aos="fade-up">
             Legal Consultations
           </h3>
-          <p class="animate-box text-justify">
+          <p class="  text-justify" data-aos="fade-up">
             We deliver a wide range of legal advice to our clients on diverse
             subject matters.
           </p>
-          <h3 class="text-xl fw-normal mt-8 mb-2 animate-box text-justify">
+          <h3 class="text-xl fw-normal mt-8 mb-2   text-justify" data-aos="fade-up">
             Retainership
           </h3>
-          <p class="animate-box  text-justify">
+          <p class="  data-aos="fade-up" text-justify">
             We offer retainership to individuals and corporate entities alike.
           </p>
-          <h3 class="text-xl animate-box text-justify fw-normal mt-8 mb-2">
+          <h3 class="text-xl   text-justify  data-aos="fade-up"fw-normal mt-8 mb-2">
             Speaking Engagements
           </h3>
-          <p class="text-lg animate-box text-justify">
+          <p class="text-lg   text-justify" data-aos="fade-up">
             We believe that knowledge empowers businesses to make informed
             decisions and navigate legalities. <a href="" class="read-more" data-bio='<p class="text-justify"> Through our speaking engagements,
               we aim to equip corporate leaders, executives, and professionals
@@ -506,9 +514,9 @@
         <div class="mx-auto container mx-auto" id="team">
           <div class="row">
             <div class="col-md-12 sm:text-justify ftco-heading">
-              <h2 class="animate-box text-center fw-normal">Our Team</h2>
+              <h2 class="  text-center fw-normal" >Our Team</h2>
               <p>
-                <p class="lead animate-box text-justify">
+                <p class="lead   text-justify" data-aos="fade-up">
                   We are proud to mention about our team of dedicated and
                   experienced lawyers and para legals who are committed to
                   delivering exceptional expert services to our clients.
@@ -532,7 +540,7 @@
           <div class="row">
             <h3 class="text-center">Meet some of our trusted Legal Allies:</h3>
             <div
-              class="col-md-4 col-sm-4 animate-box"
+              class="col-md-4 col-sm-4 " data-aos="fade-up"
               data-animate-effect="fadeIn"
             >
               <div class="ftco-staff card">
@@ -559,7 +567,7 @@
                             property laws from different notable organisations including
                             World Intellectual Property Organisation (WIPO). <br/> <br/>
                             Josephine is the author of the fast selling book, 'The Legal Protections for
-                            a Thriving Business' which is available on selar.co. <br/> <br/> She is a
+                            a Thriving Business' which is available on selar.co. She is as well the author of  the popularly known LinkedIn newsletter, Business & IP Legal Gist, with several hundreds of subscribers. <br/> <br/> She is a
                             member of the Board of Director to Nubytes technologie Inc, an
                             international tech company where she serves undaintedly. <br/> <br/>
                             Furthermore, she is a member of some reputable organisations,
@@ -601,7 +609,7 @@
             </div>
 
             <div
-              class="col-md-4 col-sm-4 animate-box"
+              class="col-md-4 col-sm-4 " data-aos="fade-up"
               data-animate-effect="fadeIn"
             >
               <div class="ftco-staff card">
@@ -648,7 +656,7 @@
             </div>
 
             <div
-              class="col-md-4 col-sm-4 animate-box"
+              class="col-md-4 col-sm-4 " data-aos="fade-up"
               data-animate-effect="fadeIn"
             >
               <div class="ftco-staff card">
@@ -690,7 +698,7 @@
             </div>
 
             <div
-              class="col-md-4 col-sm-4 animate-box"
+              class="col-md-4 col-sm-4 " data-aos="fade-up"
               data-animate-effect="fadeIn"
             >
               <div class="card ftco-staff">
@@ -742,7 +750,7 @@
         </div>
       </div>
       <div
-        class="py-5 modal fade animate-box overlay rounded-3"
+        class="py-5 modal fade   data-aos="fade-up"overlay rounded-3"
         id="myModal"
         data-bs-backdrop="true"
       >
@@ -806,7 +814,7 @@
                       </figure>
                       <span>Taiwo Deborah</span>
                       <blockquote>
-                        <p>
+                        <p class="text-justify">
                           &ldquo;Josie Lawcastle provides professional and
                           reliable legal services with a strong focus on client
                           satisfaction and effective representation.&rdquo;
@@ -821,7 +829,7 @@
                       </figure>
                       <span>Ajayi Ebenezer </span>
                       <blockquote>
-                        <p>
+                        <p class="text-justify">
                           &ldquo;I like the passion and efficiency with which
                           Josie LawCastle approaches the legal needs of clients.
                           It's all about client satisfaction.&rdquo;
@@ -832,11 +840,11 @@
                   <div class="item">
                     <div class="testimony-slide active text-center">
                       <figure class="text-center d-flex justify-content-center">
-                        <img src="images/placeholder.jpg" alt="user" />
+                        <img src="images/review4.jpeg" class="rounded-circle" alt="user" />
                       </figure>
-                      <span>Bigtime Event Business</span>
+                      <span>Bigtime Events</span>
                       <blockquote>
-                        <p>
+                        <p class="text-justify">
                           &ldquo;Kudos to Josie Lawcastle. They are really
                           worthwhile. I particularly love their commitment and
                           promptness.&rdquo;
@@ -851,7 +859,7 @@
                       </figure>
                       <span>Ajike homes</span>
                       <blockquote>
-                        <p>
+                        <p class="text-justify">
                           &ldquo;If I am to rate any lawfirm, I am rating Josie
                           Lawcastle and it's on 5 star.&rdquo;
                         </p>
@@ -861,11 +869,11 @@
                   <div class="item">
                     <div class="testimony-slide active text-center">
                       <figure class="text-center d-flex justify-content-center">
-                        <img src="images/placeholder.jpg" alt="user" />
+                        <img src="images/review3.jpeg" alt="user" />
                       </figure>
                       <span>Iyanuoluwa Gbemi</span>
                       <blockquote>
-                        <p>
+                        <p class="text-justify">
                           &ldquo;I get the best of legal service I need for my
                           catering and cake enterprises (Younique enterprise)
                           from Josie Lawcastle. They have always been my go-to
@@ -879,66 +887,6 @@
             </div>
           </div>
         </div>
-      </div>
-      <!-- 
-      <div id="ftco-consult">
-        <div
-          class="video ftco-video"
-          style="background-image: url(images/hero_1.jpg)"
-          data-stellar-background-ratio="0.5"
-        ></div>
-        <div class="choose choose-form">
-          <div class="ftco-heading">
-            <h2>Free Legal Advice</h2>
-          </div>
-          <form action="#">
-            <div class="row form-group">
-              <div class="col-md-6">
-                <label for="fname">First Name</label>
-                <input type="text" id="fname" class="form-control" />
-              </div>
-              <div class="col-md-6">
-                <label for="lname">Last Name</label>
-                <input type="text" id="lname" class="form-control" />
-              </div>
-            </div>
-
-            <div class="row form-group">
-              <div class="col-md-12">
-                <label for="email">Email</label>
-                <input type="text" id="email" class="form-control" />
-              </div>
-            </div>
-
-            <div class="row form-group">
-              <div class="col-md-12">
-                <label for="subject">Subject</label>
-                <input type="text" id="subject" class="form-control" />
-              </div>
-            </div>
-
-            <div class="row form-group">
-              <div class="col-md-12">
-                <label for="message">Message</label>
-                <textarea
-                  name="message"
-                  id="message"
-                  cols="30"
-                  rows="10"
-                  class="form-control"
-                ></textarea>
-              </div>
-            </div>
-            <div class="form-group">
-              <input
-                type="submit"
-                value="Send Message"
-                class="btn btn-primary"
-              />
-            </div>
-          </form>
-        </div>
-      </div> -->
 
       <div id="intro-bg">
         <div
@@ -1074,6 +1022,13 @@
       <script src="js/magnific-popup-options.js"></script>
       <!-- Main -->
       <script src="js/main.js"></script>
-    </div>
+      <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+      <script>
+        AOS.init({
+          duration: 1000,
+        });
+      </script>
+    </div> <!-- Closing div for id="page" -->
+  </div> <!-- Added missing closing div for id="page" -->
   </body>
 </html>

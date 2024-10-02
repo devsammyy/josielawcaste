@@ -23,40 +23,86 @@
 		}
 	};
 
-	var mobileMenuOutsideClick = function() {
+	// var mobileMenuOutsideClick = function() {
 
-		$(document).click(function (e) {
-	    var container = $("#ftco-offcanvas, .js-ftco-nav-toggle");
-	    if (!container.is(e.target) && container.has(e.target).length === 0) {
+	// 	$(document).click(function (e) {
+	//     var container = $("#ftco-offcanvas, .js-ftco-nav-toggle");
+	//     if (!container.is(e.target) && container.has(e.target).length === 0) {
 
-	    	if ( $('body').hasClass('offcanvas') ) {
+	//     	if ( $('body').hasClass('offcanvas') ) {
 
-    			$('body').removeClass('offcanvas overflow');
-    			$('.js-ftco-nav-toggle').removeClass('active');
+    // 			$('body').removeClass('offcanvas');
+    // 			$('.js-ftco-nav-toggle').removeClass('active');
 				
-	    	}
+	//     	}
 	    
 	    	
-	    }
-		});
+	//     }
+	// 	});
 
-	};
+	// };
 
 
-	
+	// var offcanvasMenu = function() {
 
-	
-	
-	var fullHeight = function() {
+	// 	$('#page').prepend('<div id="ftco-offcanvas" />');
+	// 	$('#page').prepend('<a href="#" class="js-ftco-nav-toggle ftco-nav-toggle ftco-nav-white"><i></i></a>');
+	// 	var clone1 = $('.menu-1 > ul').clone();
+	// 	$('#ftco-offcanvas').append(clone1);
+	// 	var clone2 = $('.menu-2 > ul').clone();
+	// 	$('#ftco-offcanvas').append(clone2);
 
-		if ( !isMobile.any() ) {
-			$('.js-fullheight').css('height', $(window).height());
-			$(window).resize(function(){
-				$('.js-fullheight').css('height', $(window).height());
-			});
-		}
+	// 	$('#ftco-offcanvas .has-dropdown').addClass('offcanvas-has-dropdown');
+	// 	$('#ftco-offcanvas')
+	// 		.find('li')
+	// 		.removeClass('has-dropdown');
 
-	};
+	// 	// Hover dropdown menu on mobile
+	// 	$('.offcanvas-has-dropdown').mouseenter(function(){
+	// 		var $this = $(this);
+
+	// 		$this
+	// 			.addClass('active')
+	// 			.find('ul')
+	// 			.slideDown(500, 'easeOutExpo');				
+	// 	}).mouseleave(function(){
+
+	// 		var $this = $(this);
+	// 		$this
+	// 			.removeClass('active')
+	// 			.find('ul')
+	// 			.slideUp(500, 'easeOutExpo');				
+	// 	});
+
+
+	// 	$(window).resize(function(){
+
+	// 		if ( $('body').hasClass('offcanvas') ) {
+
+    // 			$('body').removeClass('offcanvas');
+    // 			$('.js-ftco-nav-toggle').removeClass('active');
+				
+	//     	}
+	// 	});
+	// };
+
+
+	// var burgerMenu = function() {
+
+	// 	$('body').on('click', '.js-ftco-nav-toggle', function(event){
+	// 		var $this = $(this);
+
+
+	// 		if ( $('body').hasClass('overflow offcanvas') ) {
+	// 			$('body').removeClass('overflow offcanvas');
+	// 		} else {
+	// 			$('body').addClass('overflow offcanvas');
+	// 		}
+	// 		$this.toggleClass('active');
+	// 		event.preventDefault();
+
+	// 	});
+	// };
 
 	var fullHeight = function() {
 
@@ -236,7 +282,21 @@
 
 	};
 
-
+	
+	$(function(){
+		// offcanvasMenu();
+		// burgerMenu();
+		contentWayPoint();
+		sliderMain();
+		dropdown();
+		goToTop();
+		loaderPage();
+		counterWayPoint();
+		counter();
+		parallax();
+		testimonialCarousel();
+		fullHeight();
+	});
 
 // Get the modal element
 var modal = document.getElementById("myModal");
@@ -269,30 +329,32 @@ readMoreLinks.forEach(function(link) {
 		
   });
 });
-document.body.classList.toggle('show');
-const navbarToggle = document.querySelector('.navbar-toggler');
-const navbarCollapse = document.querySelector('.navbar-collapse');
-
-navbarToggle.addEventListener('click', () => {
-  navbarCollapse.classList.toggle('show');
-});
+	document.body.classList.toggle('show');
 	
-	// Add an event listener to the modal to remove the overlay when it's closed
-	$(function(){
-		mobileMenuOutsideClick();
-		
-		contentWayPoint();
-		sliderMain();
-		dropdown();
-		goToTop();
-		loaderPage();
-		counterWayPoint();
-		counter();
-		parallax();
-		testimonialCarousel();
-		fullHeight();
-	});
 
+	// Get all nav links
+const navLinks = document.querySelectorAll('.nav-link');
+
+// Add event listener to each link
+navLinks.forEach(link => {
+  link.addEventListener('click', () => {
+    // Get the navbar-collapse element
+    const navbarCollapse = document.querySelector('.navbar-collapse');
+
+    // Remove the show class to close the nav
+    navbarCollapse.classList.remove('show');
+  });
+});
+
+// Add event listener to the close button
+const closeButton = document.querySelector('.close-btn');
+closeButton.addEventListener('click', () => {
+  // Get the navbar-collapse element
+  const navbarCollapse = document.querySelector('.navbar-collapse');
+
+  // Remove the show class to close the nav
+  navbarCollapse.classList.remove('show');
+});
 
 }());
 

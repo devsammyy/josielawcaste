@@ -546,6 +546,10 @@ figure {
   margin-block: 3rem;
 }
 
+.close-btn {
+  display: none;
+}
+
 #ftco-about,
 .ftco-practice,
 #ftco-testimonial,
@@ -565,6 +569,14 @@ figure {
   #ftco-contact,
   #ftco-footer {
     padding: 3em 0;
+  }
+
+  .close-btn {
+    display: block;
+    position: absolute;
+    top: 20px;
+    right: 10px;
+    font-size: 1rem;
   }
 }
 

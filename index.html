@@ -163,6 +163,45 @@
         transform: scale(1.05);
       }
 
+      /* Hero Carousel Styles */
+      .hero-slide {
+        position: absolute;
+        inset: 0;
+        opacity: 0;
+        transition: opacity 1s ease-in-out;
+      }
+
+      .hero-slide.active {
+        opacity: 1;
+      }
+
+      .hero-slide img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+
+      /* Carousel Navigation Dots */
+      .carousel-dot {
+        width: 12px;
+        height: 12px;
+        border-radius: 50%;
+        background-color: rgba(255, 255, 255, 0.4);
+        border: 2px solid rgba(255, 255, 255, 0.6);
+        cursor: pointer;
+        transition: all 0.3s ease;
+      }
+
+      .carousel-dot:hover {
+        background-color: rgba(255, 255, 255, 0.6);
+      }
+
+      .carousel-dot.active {
+        background-color: #c9a55c;
+        border-color: #c9a55c;
+        transform: scale(1.2);
+      }
+
       /* =====================================================
          MOBILE RESPONSIVE OVERRIDES
          ===================================================== */
@@ -591,16 +630,69 @@
       </div>
     </nav>
 
-    <!-- Hero Section -->
-    <section class="relative min-h-screen flex items-center justify-center">
-      <!-- Background Image -->
-      <div class="absolute inset-0">
-        <img
-          src="images/hr2.jpg"
-          alt="Law Office"
-          class="w-full h-full object-cover"
-        />
+    <!-- Hero Section with Carousel -->
+    <section
+      id="hero"
+      class="relative min-h-screen flex items-center justify-center"
+    >
+      <!-- Background Image Carousel -->
+      <div class="absolute inset-0" id="hero-carousel">
+        <div class="hero-slide active">
+          <img
+            src="images/hero_1.jpg"
+            alt="Law Office"
+            class="w-full h-full object-cover"
+          />
+        </div>
+        <div class="hero-slide">
+          <img
+            src="images/hero_2.jpg"
+            alt="Legal Team"
+            class="w-full h-full object-cover"
+          />
+        </div>
+        <div class="hero-slide">
+          <img
+            src="images/hero_3.jpg"
+            alt="Courtroom"
+            class="w-full h-full object-cover"
+          />
+        </div>
+        <div class="hero-slide">
+          <img
+            src="images/hero_4.jpg"
+            alt="Justice"
+            class="w-full h-full object-cover"
+          />
+        </div>
         <div class="hero-overlay absolute inset-0"></div>
+      </div>
+
+      <!-- Carousel Navigation Dots -->
+      <div
+        class="absolute bottom-24 left-1/2 transform -translate-x-1/2 z-20 flex gap-3"
+        id="carousel-dots"
+      >
+        <button
+          class="carousel-dot active"
+          data-slide="0"
+          aria-label="Go to slide 1"
+        ></button>
+        <button
+          class="carousel-dot"
+          data-slide="1"
+          aria-label="Go to slide 2"
+        ></button>
+        <button
+          class="carousel-dot"
+          data-slide="2"
+          aria-label="Go to slide 3"
+        ></button>
+        <button
+          class="carousel-dot"
+          data-slide="3"
+          aria-label="Go to slide 4"
+        ></button>
       </div>
 
       <!-- Content -->
@@ -1252,7 +1344,7 @@
               <img
                 src="images/DSC05270-Edit.jpg"
                 alt="Josephine Aransiola"
-                class="w-full h-full object-cover"
+                class="w-full h-full object-cover object-top"
               />
             </div>
             <div class="p-6 text-center">
@@ -1862,6 +1954,54 @@
 
       // Initialize Lucide Icons
       lucide.createIcons();
+
+      // Hero Carousel
+      const heroSlides = document.querySelectorAll(".hero-slide");
+      const carouselDots = document.querySelectorAll(".carousel-dot");
+      let currentSlide = 0;
+      let carouselInterval;
+
+      function goToSlide(index) {
+        // Remove active class from all slides and dots
+        heroSlides.forEach((slide) => slide.classList.remove("active"));
+        carouselDots.forEach((dot) => dot.classList.remove("active"));
+
+        // Set new active slide and dot
+        currentSlide = index;
+        heroSlides[currentSlide].classList.add("active");
+        carouselDots[currentSlide].classList.add("active");
+      }
+
+      function nextSlide() {
+        const next = (currentSlide + 1) % heroSlides.length;
+        goToSlide(next);
+      }
+
+      // Auto-advance carousel every 5 seconds
+      function startCarousel() {
+        carouselInterval = setInterval(nextSlide, 5000);
+      }
+
+      function stopCarousel() {
+        clearInterval(carouselInterval);
+      }
+
+      // Click handlers for dots
+      carouselDots.forEach((dot, index) => {
+        dot.addEventListener("click", () => {
+          stopCarousel();
+          goToSlide(index);
+          startCarousel();
+        });
+      });
+
+      // Pause on hover (optional UX improvement)
+      const heroSection = document.getElementById("hero");
+      heroSection.addEventListener("mouseenter", stopCarousel);
+      heroSection.addEventListener("mouseleave", startCarousel);
+
+      // Start the carousel
+      startCarousel();
 
       // Mobile Menu Toggle
       const mobileMenuBtn = document.getElementById("mobile-menu-btn");

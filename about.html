@@ -1,356 +1,556 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
   <head>
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <title>Josie Law Castle &mdash; Welcome to our website</title>
+    <title>Events — Josie Lawcastle</title>
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="Josie" content="Josie Lawcastle" />
+    <meta
+      name="description"
+      content="Josie Lawcastle (JLC) - Events and Activities"
+    />
     <meta
       name="keywords"
       content="Law firm, Legal services, Corporate law, Intellectual property, Real estate, Nigeria, Josie Lawcastle"
     />
 
-    <meta name="description" content="Josie Lawcastle (JLC)" />
-    <!-- Facebook and Twitter integration -->
-    <meta property="og:title" content="Josie Lawcastle (JLC) " />
+    <!-- Open Graph -->
+    <meta property="og:title" content="Josie Lawcastle (JLC) - Events" />
     <meta property="og:image" content="./images/logo.png" />
     <meta property="og:url" content="https://www.josielawcastle.com" />
     <meta property="og:site_name" content="Josie Lawcastle" />
-    <meta
-      property="og:description"
-      content="Josie Lawcastle (JLC) is one of the leading full service law firms in Nigeria, committed to providing zenith legal services in Nigeria, Africa, and globally while meeting the legal needs and demands of our esteemed clients."
-    />
-    <meta name="twitter:title" content="" />
-    <meta name="twitter:image" content="" />
-    <meta name="twitter:url" content="" />
-    <meta name="twitter:card" content="" />
 
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              primary: {
+                50: "#f0f4f8",
+                100: "#d9e2ec",
+                200: "#bcccdc",
+                300: "#9fb3c8",
+                400: "#829ab1",
+                500: "#627d98",
+                600: "#486581",
+                700: "#334e68",
+                800: "#243b53",
+                900: "#102a43",
+              },
+              accent: {
+                50: "#fdf8f0",
+                100: "#f9ecd8",
+                200: "#f2d9b0",
+                300: "#e8c285",
+                400: "#dba855",
+                500: "#c9a55c",
+                600: "#b08d3e",
+                700: "#8c6d2f",
+                800: "#6b5324",
+                900: "#4d3b1a",
+              },
+            },
+            fontFamily: {
+              sans: ["Inter", "system-ui", "sans-serif"],
+            },
+          },
+        },
+      };
+    </script>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css?family=Work+Sans:300,400,700"
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap"
       rel="stylesheet"
     />
 
-    <!-- Animate.css -->
-    <link rel="stylesheet" href="css/animate.css" />
-    <!-- Icomoon Icon Fonts-->
-    <link rel="stylesheet" href="css/icomoon.css" />
-    <!-- Bootstrap  -->
-    <link rel="stylesheet" href="css/bootstrap.css" />
-
-    <!-- Magnific Popup -->
-    <link rel="stylesheet" href="css/magnific-popup.css" />
-
-    <!-- Owl Carousel  -->
-    <link rel="stylesheet" href="css/owl.carousel.min.css" />
-    <link rel="stylesheet" href="css/owl.theme.default.min.css" />
-    <!-- Flexslider  -->
-    <link rel="stylesheet" href="css/flexslider.css" />
-    <!-- Flaticons  -->
-    <link rel="stylesheet" href="fonts/flaticon/font/flaticon.css" />
-
-    <!-- Theme style  -->
-    <link rel="stylesheet" href="css/style.css" />
-
-    <!-- Modernizr JS -->
-    <script src="js/modernizr-2.6.2.min.js"></script>
-    <!-- FOR IE9 below -->
-    <!--[if lt IE 9]>
-      <script src="js/respond.min.js"></script>
-    <![endif]-->
-
-    <!-- Aos -->
+    <!-- AOS Animation -->
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
+
+    <style>
+      html {
+        scroll-behavior: smooth;
+      }
+      body {
+        font-family: "Inter", sans-serif;
+      }
+
+      .nav-blur {
+        backdrop-filter: blur(12px);
+        -webkit-backdrop-filter: blur(12px);
+      }
+
+      .hero-overlay {
+        background: linear-gradient(
+          135deg,
+          rgba(16, 42, 67, 0.92) 0%,
+          rgba(36, 59, 83, 0.88) 50%,
+          rgba(16, 42, 67, 0.92) 100%
+        );
+      }
+
+      .animated-underline::after {
+        content: "";
+        position: absolute;
+        bottom: 0;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 80px;
+        height: 4px;
+        background: linear-gradient(90deg, #c9a55c, #b08d3e);
+        border-radius: 2px;
+      }
+    </style>
   </head>
 
-  <body>
-    <div class="ftco-loader"></div>
-
-    <div id="page">
-      <div>
-        <!-- Added missing opening div tag -->
-
-        <nav
-          id="navbarToggleExternalContent"
-          class="ftco-nav navbar navbar-expand-lg navbar-dark"
-        >
-          <div class="container-fluid mx-auto d-flex align-items-center">
-            <div
-              class="logo d-flex flex-column justify-content-center align-items-center"
-            >
-              <img
-                src="images/logo3.png"
-                style="width: 50px"
-                class="img-thumbnail"
-                alt=""
-              />
-              <div>
-                <a class="navbar-brand md:fs-1" href="index.html"
-                  >JOSIE LAWCASTLE</a
-                >
-                <p class="extra">A Lawfirm Extraordinaire</p>
-              </div>
+  <body class="bg-white text-gray-700 antialiased">
+    <!-- Navigation -->
+    <nav
+      class="fixed top-0 left-0 right-0 z-50 nav-blur bg-white/95 border-b border-gray-100 shadow-sm"
+    >
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex items-center justify-between h-20">
+          <!-- Logo -->
+          <a href="index.html" class="flex items-center gap-4 group">
+            <img
+              src="images/logo3.png"
+              alt="Josie Lawcastle Logo"
+              class="w-12 h-12 rounded-xl border-2 border-gray-100 group-hover:border-accent-500 transition-colors shadow-sm"
+            />
+            <div>
+              <span
+                class="text-xl lg:text-2xl font-extrabold text-primary-900 group-hover:text-accent-600 transition-colors"
+                >JOSIE LAWCASTLE</span
+              >
+              <p
+                class="text-xs text-accent-600 font-semibold tracking-widest uppercase"
+              >
+                A Lawfirm Extraordinaire
+              </p>
             </div>
+          </a>
 
-            <button
-              class="navbar-toggler"
-              type="button"
-              data-bs-toggle="collapse"
-              data-bs-target="#navbarSupportedContent"
-              aria-controls="navbarSupportedContent"
-              aria-expanded="false"
-              aria-label="Toggle navigation"
+          <!-- Mobile Menu Button -->
+          <button
+            id="mobile-menu-btn"
+            class="lg:hidden p-2 rounded-lg hover:bg-gray-100 transition-colors"
+          >
+            <i data-lucide="menu" class="w-6 h-6 text-primary-900"></i>
+          </button>
+
+          <!-- Desktop Navigation -->
+          <div class="hidden lg:flex items-center gap-1">
+            <a
+              href="index.html"
+              class="px-4 py-2 text-sm font-semibold text-gray-600 hover:text-accent-600 hover:bg-accent-50 rounded-lg transition-all"
+              >Home</a
             >
-              <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarSupportedContent">
-              <ul class="navbar-nav ms-auto">
-                <li class="nav-item active">
-                  <a class="nav-link" href="index.html">Home</a>
-                </li>
-              </ul>
-              <button
-                type="button"
-                class="btn-close btn-close-white close-btn"
-                aria-label="Close"
-              ></button>
+            <a
+              href="index.html#about"
+              class="px-4 py-2 text-sm font-semibold text-gray-600 hover:text-accent-600 hover:bg-accent-50 rounded-lg transition-all"
+              >About</a
+            >
+            <a
+              href="index.html#practice"
+              class="px-4 py-2 text-sm font-semibold text-gray-600 hover:text-accent-600 hover:bg-accent-50 rounded-lg transition-all"
+              >Practice Areas</a
+            >
+            <a
+              href="index.html#team"
+              class="px-4 py-2 text-sm font-semibold text-gray-600 hover:text-accent-600 hover:bg-accent-50 rounded-lg transition-all"
+              >Our Team</a
+            >
+            <a
+              href="#"
+              class="px-4 py-2 text-sm font-semibold text-primary-900 hover:text-accent-600 hover:bg-accent-50 rounded-lg transition-all"
+              >Events</a
+            >
+            <a
+              href="index.html#contact"
+              class="ml-2 px-6 py-2.5 text-sm font-bold text-primary-900 bg-accent-500 hover:bg-accent-600 rounded-xl shadow-lg shadow-accent-500/30 hover:shadow-accent-500/40 transition-all"
+              >Contact Us</a
+            >
+          </div>
+        </div>
+      </div>
+
+      <!-- Mobile Menu -->
+      <div
+        id="mobile-menu"
+        class="hidden lg:hidden bg-white border-t border-gray-100 shadow-lg"
+      >
+        <div class="px-4 py-4 space-y-2">
+          <a
+            href="index.html"
+            class="block px-4 py-3 text-sm font-semibold text-gray-600 hover:bg-accent-50 rounded-lg transition-all"
+            >Home</a
+          >
+          <a
+            href="index.html#about"
+            class="block px-4 py-3 text-sm font-semibold text-gray-600 hover:bg-accent-50 rounded-lg transition-all"
+            >About</a
+          >
+          <a
+            href="index.html#practice"
+            class="block px-4 py-3 text-sm font-semibold text-gray-600 hover:bg-accent-50 rounded-lg transition-all"
+            >Practice Areas</a
+          >
+          <a
+            href="index.html#team"
+            class="block px-4 py-3 text-sm font-semibold text-gray-600 hover:bg-accent-50 rounded-lg transition-all"
+            >Our Team</a
+          >
+          <a
+            href="#"
+            class="block px-4 py-3 text-sm font-semibold text-primary-900 hover:bg-accent-50 rounded-lg transition-all"
+            >Events</a
+          >
+          <a
+            href="index.html#contact"
+            class="block px-4 py-3 text-sm font-bold text-center text-primary-900 bg-accent-500 hover:bg-accent-600 rounded-xl transition-all"
+            >Contact Us</a
+          >
+        </div>
+      </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section
+      class="relative min-h-[60vh] flex items-center justify-center pt-20"
+    >
+      <!-- Background Image -->
+      <div class="absolute inset-0">
+        <img
+          src="images/hr2.jpg"
+          alt="Law Office"
+          class="w-full h-full object-cover"
+        />
+        <div class="hero-overlay absolute inset-0"></div>
+      </div>
+
+      <!-- Content -->
+      <div
+        class="relative z-10 max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center py-20"
+        data-aos="fade-up"
+        data-aos-duration="1000"
+      >
+        <h1
+          class="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-white leading-tight mb-6"
+        >
+          Events & Activities
+        </h1>
+        <p class="text-lg text-gray-300 max-w-2xl mx-auto">
+          Discover our latest events, seminars, and professional engagements.
+        </p>
+      </div>
+    </section>
+
+    <!-- Events Section -->
+    <section class="py-24 lg:py-32 bg-white">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-16" data-aos="fade-up">
+          <h2
+            class="text-4xl lg:text-5xl font-extrabold text-primary-900 mb-4 relative inline-block pb-4 animated-underline"
+          >
+            Events
+          </h2>
+        </div>
+
+        <div class="grid md:grid-cols-2 gap-8 lg:gap-12">
+          <div
+            class="group overflow-hidden rounded-3xl shadow-xl"
+            data-aos="fade-up"
+            data-aos-delay="0"
+          >
+            <div class="aspect-video overflow-hidden">
+              <img
+                src="images/ev1.jpg"
+                alt="Event 1"
+                class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+              />
             </div>
           </div>
-        </nav>
 
-        <aside id="ftco-hero" class="js-fullheight">
-          <div class="flexslider js-fullheight">
-            <ul class="slides">
-              <li style="background-image: url(images/hr2.jpg)">
-                <div class="overlay-gradient"></div>
-                <div class="container mx-auto">
-                  <div class="row">
-                    <div
-                      class="col-md-12 col-md-offset-2 text-center js-fullheight slider-text"
-                    >
-                      <div class="slider-text-inner">
-                        <h1>
-                          <strong
-                            >Get all your business and corporate legal needs
-                            seamlessly taken care of by us and boast of a
-                            thriving result.
-                          </strong>
-                        </h1>
-                        <p>
-                          <a
-                            class="btn btn-primary btn-lg btn-learn"
-                            href="#contact"
-                            >Get in touch</a
-                          >
-                        </p>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </li>
-              <li
-                style="
-                  background-image: url(images/gavel.jpg);
-                  background-size: cover;
-                  background-position: center;
-                  object-fit: cover;
-                "
-              >
-                <div class="overlay-gradient"></div>
+          <div
+            class="group overflow-hidden rounded-3xl shadow-xl"
+            data-aos="fade-up"
+            data-aos-delay="100"
+          >
+            <div class="aspect-video overflow-hidden">
+              <img
+                src="images/ev2.jpg"
+                alt="Event 2"
+                class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+              />
+            </div>
+          </div>
+        </div>
 
-                <div class="container mx-auto text-center">
-                  <div class="row">
-                    <div
-                      class="col-md-12 col-md-offset-2 text-center js-fullheight slider-text"
-                    >
-                      <div class="slider-text-inner text-center">
-                        <h1>
-                          <strong
-                            >Trust us to protect your intellectual assets. We're
-                            your reliable legal shield to keep you ahead of your
-                            competitors
-                          </strong>
-                        </h1>
-                        <p>
-                          <a
-                            class="btn btn-primary btn-lg btn-learn"
-                            href="#contact"
-                            >Get in touch</a
-                          >
-                        </p>
-                      </div>
-                    </div>
-                  </div>
-                </div>
+        <div class="text-center mt-12" data-aos="fade-up" data-aos-delay="200">
+          <p class="text-gray-600 text-lg mb-8">
+            Stay tuned for more upcoming events and professional engagements.
+          </p>
+          <a
+            href="index.html#contact"
+            class="inline-flex items-center gap-2 px-8 py-4 bg-accent-500 hover:bg-accent-600 text-primary-900 font-bold text-lg rounded-2xl shadow-2xl shadow-accent-500/30 hover:shadow-accent-500/50 transform hover:-translate-y-1 transition-all"
+          >
+            <span>Contact Us for Events</span>
+            <i data-lucide="arrow-right" class="w-5 h-5"></i>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-gray-400 pt-20 pb-8">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-12 mb-16">
+          <!-- About -->
+          <div>
+            <div class="flex items-center gap-3 mb-6">
+              <img
+                src="images/logo3.png"
+                alt="Josie Lawcastle"
+                class="w-12 h-12 rounded-xl"
+              />
+              <h4 class="text-xl font-bold text-white">Josie Lawcastle</h4>
+            </div>
+            <p class="text-gray-400 leading-relaxed">
+              One of the leading full service law firm in Nigeria, committed to
+              providing zenith legal services globally.
+            </p>
+          </div>
+
+          <!-- Navigation -->
+          <div>
+            <h4 class="text-lg font-bold text-white mb-6 relative inline-block">
+              Navigation
+              <span
+                class="absolute -bottom-2 left-0 w-10 h-1 bg-accent-500 rounded-full"
+              ></span>
+            </h4>
+            <ul class="space-y-3">
+              <li>
+                <a
+                  href="index.html"
+                  class="hover:text-accent-500 transition-colors"
+                  >Home</a
+                >
               </li>
-              <li style="background-image: url(images/hero_4.jpg)">
-                <div class="overlay-gradient"></div>
-                <div class="container mx-auto">
-                  <div class="row">
-                    <div
-                      class="col-md-12 col-md-offset-2 text-center js-fullheight slider-text"
-                    >
-                      <div class="slider-text-inner">
-                        <h1>
-                          <strong
-                            >Enjoy peace of mind with our expert real estate
-                            legal solutions and guides.</strong
-                          >
-                        </h1>
-                        <p>
-                          <a
-                            class="btn btn-primary btn-lg btn-learn"
-                            href="#contact"
-                            >Get in touch</a
-                          >
-                        </p>
-                      </div>
-                    </div>
-                  </div>
-                </div>
+              <li>
+                <a
+                  href="index.html#about"
+                  class="hover:text-accent-500 transition-colors"
+                  >About</a
+                >
+              </li>
+              <li>
+                <a
+                  href="index.html#practice"
+                  class="hover:text-accent-500 transition-colors"
+                  >Practice Areas</a
+                >
+              </li>
+              <li>
+                <a
+                  href="index.html#team"
+                  class="hover:text-accent-500 transition-colors"
+                  >Our Team</a
+                >
+              </li>
+              <li>
+                <a
+                  href="index.html#reviews"
+                  class="hover:text-accent-500 transition-colors"
+                  >Reviews</a
+                >
+              </li>
+              <li>
+                <a
+                  href="index.html#contact"
+                  class="hover:text-accent-500 transition-colors"
+                  >Contact</a
+                >
               </li>
             </ul>
           </div>
-        </aside>
-        <div class="site-section" id="about">
-          <div class="container mx-auto" data-aos="fade-up">
-            <h5 class="text-center mb-4 about-us fw-normal">Events</h5>
-            <div class="row">
-              <div class="col-md-6 mb-5">
-                <img src="images/ev1.jpg" alt="About us" class="img-fluid" />
-              </div>
-              <div class="col-md-6">
-                <img src="images/ev2.jpg" alt="About us" class="img-fluid" />
-              </div>
-            </div>
+
+          <!-- Contact -->
+          <div>
+            <h4 class="text-lg font-bold text-white mb-6 relative inline-block">
+              Contact Info
+              <span
+                class="absolute -bottom-2 left-0 w-10 h-1 bg-accent-500 rounded-full"
+              ></span>
+            </h4>
+            <ul class="space-y-3">
+              <li class="flex items-start gap-3">
+                <i
+                  data-lucide="map-pin"
+                  class="w-5 h-5 text-accent-500 mt-1 flex-shrink-0"
+                ></i>
+                <span
+                  >No. 1, Josie Lawcastle, Off Offa-road, Lajorin, Ilorin, Kwara
+                  state, Nigeria.</span
+                >
+              </li>
+              <li>
+                <a
+                  href="https://wa.link/mocv8t"
+                  class="flex items-center gap-3 hover:text-accent-500 transition-colors"
+                >
+                  <i data-lucide="phone" class="w-5 h-5 text-accent-500"></i>
+                  <span>+2349014305085</span>
+                </a>
+              </li>
+              <li>
+                <a
+                  href="mailto:josielawcastle247@gmail.com"
+                  class="flex items-center gap-3 hover:text-accent-500 transition-colors"
+                >
+                  <i data-lucide="mail" class="w-5 h-5 text-accent-500"></i>
+                  <span>josielawcastle247@gmail.com</span>
+                </a>
+              </li>
+            </ul>
           </div>
-        </div>
 
-        <footer id="ftco-footer" role="contentinfo">
-          <div class="container">
-            <div class="row row-pb-md">
-              <div class="col-md-3 ftco-widget">
-                <h4 data-aos="slide-left">Josie Lawcastle</h4>
-                <p data-aos="slide-up" data-aos-delay="300">
-                  Josie Lawcastle (JLC) is one of the leading full service law
-                  firm in Nigeria, committed to providing zenith legal services
-                  in Nigeria, Africa, and globally while meeting the legal needs
-                  and demands of our esteemed clients.
-                </p>
-              </div>
-              <div class="col-md-3 col-md-push-1">
-                <h4 data-aos="slide-down">Navigation</h4>
-                <ul class="ftco-footer-links">
-                  <li class="active" data-aos="slide-up">
-                    <a href="index.html">Home</a>
-                  </li>
-                  <li data-aos="slide-up"><a href="#about">About</a></li>
-                  <li data-aos="slide-up">
-                    <a href="#practice">Area of Expertise</a>
-                  </li>
-                  <li data-aos="slide-up"><a href="#team">Our team</a></li>
-                  <li data-aos="slide-up"><a href="#review">Review</a></li>
-                  <li data-aos="slide-up"><a href="#contact">Contact</a></li>
-                </ul>
-              </div>
+          <!-- Hours -->
+          <div>
+            <h4 class="text-lg font-bold text-white mb-6 relative inline-block">
+              Opening Hours
+              <span
+                class="absolute -bottom-2 left-0 w-10 h-1 bg-accent-500 rounded-full"
+              ></span>
+            </h4>
+            <ul class="space-y-3">
+              <li class="flex items-center gap-3">
+                <i data-lucide="clock" class="w-5 h-5 text-accent-500"></i>
+                <span>Mon - Fri: 8:00am - 5:00pm</span>
+              </li>
+              <li class="flex items-center gap-3">
+                <i data-lucide="clock" class="w-5 h-5 text-accent-500"></i>
+                <span>Sat: 9:00am - 2:00pm</span>
+              </li>
+            </ul>
 
-              <div class="col-md-3 col-md-push-1">
-                <h4 data-aos="slide-up">Contact Information</h4>
-                <ul class="ftco-footer-links">
-                  <li data-aos="slide-up">
-                    No. 1, Josie Lawcastle ,<br />
-                    Off Offa-road, Lajorin,<br />
-                    Ilorin, Kwara state. <br />
-                    Nigeria.
-                  </li>
-                  <li data-aos="slide-up">
-                    <a href="https://wa.link/mocv8t">+2349014305085</a>
-                  </li>
-
-                  <li data-aos="slide-up">
-                    <a href="mailto:josielawcastle247@gmail.com"
-                      >josielawcastle247@gmail.com</a
-                    >
-                  </li>
-                </ul>
-              </div>
-
-              <div class="col-md-3 col-md-push-1">
-                <h4>Opening Hours</h4>
-                <ul class="ftco-footer-links">
-                  <li>Mon - Fri: 8:00am - 5:00pm</li>
-                  <li>Sat 9:00am - 2:00pm</li>
-                </ul>
-              </div>
-            </div>
-
-            <div>
-              <h3 class="text-white">Newsletter</h3>
+            <div class="mt-8">
+              <h5 class="text-white font-semibold mb-3">Newsletter</h5>
               <a
                 href="https://www.linkedin.com/newsletters/the-business-ip-legal-gist-7185689767794130945"
                 target="_blank"
+                class="inline-flex items-center gap-2 px-6 py-3 bg-accent-500 hover:bg-accent-600 text-primary-900 font-semibold rounded-xl transition-all"
               >
-                <button class="btn btn-primary mb-5">
-                  <i class="icon-linkedin"></i> Click to join our newsletter
-                  subscribers
-                </button>
+                <i data-lucide="linkedin" class="w-5 h-5"></i>
+                <span>Join Newsletter</span>
               </a>
             </div>
-
-            <div class="row copyright">
-              <div class="col-md-12 mb-5 d-flex justify-content-center">
-                <img
-                  src="images/logo3.png"
-                  style="width: 100px"
-                  class="img-thumbnail"
-                  alt=""
-                />
-              </div>
-              <div class="col-md-12 text-center">
-                <p>
-                  Copyright &copy;
-                  <script>
-                    document.write(new Date().getFullYear());
-                  </script>
-                  All rights reserved | Josie Lawcastle
-                </p>
-              </div>
-            </div>
           </div>
-        </footer>
-        <div class="gototop js-top">
-          <a href="#" class="js-gotop"><i class="icon-arrow-up"></i></a>
         </div>
 
-        <!-- jQuery -->
-        <script src="js/jquery.min.js"></script>
-        <!-- jQuery Easing -->
-        <script src="js/jquery.easing.1.3.js"></script>
-        <!-- Bootstrap -->
-        <script src="js/bootstrap.min.js"></script>
-        <!-- Waypoints -->
-        <script src="js/jquery.waypoints.min.js"></script>
-        <!-- Stellar Parallax -->
-        <script src="js/jquery.stellar.min.js"></script>
-        <!-- Carousel -->
-        <script src="js/owl.carousel.min.js"></script>
-        <!-- Flexslider -->
-        <script src="js/jquery.flexslider-min.js"></script>
-        <!-- countTo -->
-        <script src="js/jquery.countTo.js"></script>
-        <!-- Magnific Popup -->
-        <script src="js/jquery.magnific-popup.min.js"></script>
-        <script src="js/magnific-popup-options.js"></script>
-        <!-- Main -->
-        <script src="js/main.js"></script>
-        <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-        <script>
-          AOS.init({
-            duration: 1000,
-          });
-        </script>
+        <!-- Bottom -->
+        <div
+          class="border-t border-gray-800 pt-8 flex flex-col md:flex-row items-center justify-between gap-4"
+        >
+          <div class="flex items-center gap-4">
+            <img
+              src="images/logo3.png"
+              alt="Logo"
+              class="w-10 h-10 rounded-lg"
+            />
+            <p class="text-sm">
+              Copyright © <span id="year"></span> All rights reserved | Josie
+              Lawcastle
+            </p>
+          </div>
+
+          <div class="flex items-center gap-4">
+            <a
+              href="#"
+              class="w-10 h-10 bg-gray-800 hover:bg-accent-500 rounded-xl flex items-center justify-center text-gray-400 hover:text-white transition-all"
+            >
+              <i data-lucide="facebook" class="w-5 h-5"></i>
+            </a>
+            <a
+              href="#"
+              class="w-10 h-10 bg-gray-800 hover:bg-accent-500 rounded-xl flex items-center justify-center text-gray-400 hover:text-white transition-all"
+            >
+              <i data-lucide="twitter" class="w-5 h-5"></i>
+            </a>
+            <a
+              href="https://www.linkedin.com/in/josephine-aransiola"
+              target="_blank"
+              class="w-10 h-10 bg-gray-800 hover:bg-accent-500 rounded-xl flex items-center justify-center text-gray-400 hover:text-white transition-all"
+            >
+              <i data-lucide="linkedin" class="w-5 h-5"></i>
+            </a>
+          </div>
+        </div>
       </div>
-    </div>
-    <!-- Added missing closing div for id="page" -->
+    </footer>
+
+    <!-- Back to Top -->
+    <button
+      id="back-to-top"
+      class="fixed bottom-8 right-8 w-14 h-14 bg-accent-500 hover:bg-accent-600 text-primary-900 rounded-2xl shadow-2xl shadow-accent-500/30 flex items-center justify-center opacity-0 invisible transition-all z-50"
+    >
+      <i data-lucide="chevron-up" class="w-6 h-6"></i>
+    </button>
+
+    <!-- Scripts -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+      // Initialize AOS
+      AOS.init({
+        duration: 800,
+        once: true,
+        offset: 100,
+      });
+
+      // Initialize Lucide Icons
+      lucide.createIcons();
+
+      // Mobile Menu Toggle
+      const mobileMenuBtn = document.getElementById("mobile-menu-btn");
+      const mobileMenu = document.getElementById("mobile-menu");
+
+      mobileMenuBtn.addEventListener("click", () => {
+        mobileMenu.classList.toggle("hidden");
+      });
+
+      // Close mobile menu on link click
+      mobileMenu.querySelectorAll("a").forEach((link) => {
+        link.addEventListener("click", () => {
+          mobileMenu.classList.add("hidden");
+        });
+      });
+
+      // Back to Top Button
+      const backToTop = document.getElementById("back-to-top");
+
+      window.addEventListener("scroll", () => {
+        if (window.scrollY > 500) {
+          backToTop.classList.remove("opacity-0", "invisible");
+          backToTop.classList.add("opacity-100", "visible");
+        } else {
+          backToTop.classList.add("opacity-0", "invisible");
+          backToTop.classList.remove("opacity-100", "visible");
+        }
+      });
+
+      backToTop.addEventListener("click", () => {
+        window.scrollTo({ top: 0, behavior: "smooth" });
+      });
+
+      // Set current year
+      document.getElementById("year").textContent = new Date().getFullYear();
+    </script>
   </body>
 </html>

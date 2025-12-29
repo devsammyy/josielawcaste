@@ -1,1071 +1,1622 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
   <head>
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <title>Josie Lawcastle &mdash; Welcome to our website</title>
+    <title>Josie Lawcastle — Leading Law Firm in Nigeria</title>
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-<meta name="Josie" content="Josie Lawcastle">
-    <meta name="keywords" content="Law firm, Legal services, Corporate law, Intellectual property, Real estate, Nigeria, Josie Lawcastle">
+    <meta
+      name="description"
+      content="Josie Lawcastle (JLC) is one of the leading full service law firms in Nigeria, committed to providing zenith legal services in Nigeria, Africa, and globally."
+    />
+    <meta
+      name="keywords"
+      content="Law firm, Legal services, Corporate law, Intellectual property, Real estate, Nigeria, Josie Lawcastle"
+    />
 
-<meta name="description" content="Josie Lawcastle (JLC)">
-    <!-- Facebook and Twitter integration -->
-    <meta property="og:title" content="Josie Lawcastle (JLC) " />
+    <!-- Open Graph -->
+    <meta property="og:title" content="Josie Lawcastle (JLC)" />
     <meta property="og:image" content="./images/logo.png" />
     <meta property="og:url" content="https://www.josielawcastle.com" />
     <meta property="og:site_name" content="Josie Lawcastle" />
-    <meta property="og:description" content="Josie Lawcastle (JLC) is one of the leading full service law firms in Nigeria, committed to providing zenith legal services in Nigeria, Africa, and globally while meeting the legal needs and demands of our esteemed clients." />
-    <meta name="twitter:title" content="" />
-    <meta name="twitter:image" content="" />
-    <meta name="twitter:url" content="" />
-    <meta name="twitter:card" content="" />
+    <meta
+      property="og:description"
+      content="Josie Lawcastle (JLC) is one of the leading full service law firms in Nigeria, committed to providing zenith legal services in Nigeria, Africa, and globally while meeting the legal needs and demands of our esteemed clients."
+    />
 
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              primary: {
+                50: "#f0f4f8",
+                100: "#d9e2ec",
+                200: "#bcccdc",
+                300: "#9fb3c8",
+                400: "#829ab1",
+                500: "#627d98",
+                600: "#486581",
+                700: "#334e68",
+                800: "#243b53",
+                900: "#102a43",
+              },
+              accent: {
+                50: "#fdf8f0",
+                100: "#f9ecd8",
+                200: "#f2d9b0",
+                300: "#e8c285",
+                400: "#dba855",
+                500: "#c9a55c",
+                600: "#b08d3e",
+                700: "#8c6d2f",
+                800: "#6b5324",
+                900: "#4d3b1a",
+              },
+            },
+            fontFamily: {
+              sans: ["Inter", "system-ui", "sans-serif"],
+            },
+          },
+        },
+      };
+    </script>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css?family=Work+Sans:300,400,700"
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap"
       rel="stylesheet"
     />
 
-    <!-- Animate.css -->
-    <link rel="stylesheet" href="css/animate.css" />
-    <!-- Icomoon Icon Fonts-->
-    <link rel="stylesheet" href="css/icomoon.css" />
-    <!-- Bootstrap  -->
-    <link rel="stylesheet" href="css/bootstrap.css" />
-
-    <!-- Magnific Popup -->
-    <link rel="stylesheet" href="css/magnific-popup.css" />
-
-    <!-- Owl Carousel  -->
-    <link rel="stylesheet" href="css/owl.carousel.min.css" />
-    <link rel="stylesheet" href="css/owl.theme.default.min.css" />
-    <!-- Flexslider  -->
-    <link rel="stylesheet" href="css/flexslider.css" />
-    <!-- Flaticons  -->
-    <link rel="stylesheet" href="fonts/flaticon/font/flaticon.css" />
-
-    <!-- Theme style  -->
-    <link rel="stylesheet" href="css/style.css" />
-
-    <!-- Modernizr JS -->
-    <script src="js/modernizr-2.6.2.min.js"></script>
-    <!-- FOR IE9 below -->
-    <!--[if lt IE 9]>
-      <script src="js/respond.min.js"></script>
-    <![endif]-->
-
-
-    <!-- Aos -->
+    <!-- AOS Animation -->
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
+
+    <style>
+      html {
+        scroll-behavior: smooth;
+      }
+      body {
+        font-family: "Inter", sans-serif;
+      }
+
+      /* Smooth backdrop blur for nav */
+      .nav-blur {
+        backdrop-filter: blur(12px);
+        -webkit-backdrop-filter: blur(12px);
+      }
+
+      /* Hero gradient overlay */
+      .hero-overlay {
+        background: linear-gradient(
+          135deg,
+          rgba(16, 42, 67, 0.92) 0%,
+          rgba(36, 59, 83, 0.88) 50%,
+          rgba(16, 42, 67, 0.92) 100%
+        );
+      }
+
+      /* Card hover animation */
+      .card-hover {
+        transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+      }
+      .card-hover:hover {
+        transform: translateY(-8px);
+      }
+
+      /* Gold gradient text */
+      .text-gold-gradient {
+        background: linear-gradient(
+          135deg,
+          #c9a55c 0%,
+          #dfc87d 50%,
+          #c9a55c 100%
+        );
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+      }
+
+      /* Animated underline */
+      .animated-underline::after {
+        content: "";
+        position: absolute;
+        bottom: 0;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 80px;
+        height: 4px;
+        background: linear-gradient(90deg, #c9a55c, #b08d3e);
+        border-radius: 2px;
+      }
+
+      /* Team card image zoom */
+      .team-img-zoom img {
+        transition: transform 0.4s ease;
+      }
+      .team-img-zoom:hover img {
+        transform: scale(1.05);
+      }
+    </style>
   </head>
 
-  <body>
-    <div class="ftco-loader"></div>
-
-    <div id="page">
-    <div> <!-- Added missing opening div tag -->
-
-    
-
-      <nav id="navbarToggleExternalContent" class="ftco-nav navbar navbar-expand-lg navbar-dark">
-        <div class="container-fluid mx-auto d-flex align-items-center">
-          <div class="logo d-flex flex-column justify-content-center align-items-center">
-            <img src="images/logo3.png" style="width: 50px;" class="img-thumbnail" alt="">
+  <body class="bg-white text-gray-700 antialiased">
+    <!-- Navigation -->
+    <nav
+      class="fixed top-0 left-0 right-0 z-50 nav-blur bg-white/95 border-b border-gray-100 shadow-sm"
+    >
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex items-center justify-between h-20">
+          <!-- Logo -->
+          <a href="index.html" class="flex items-center gap-4 group">
+            <img
+              src="images/logo3.png"
+              alt="Josie Lawcastle Logo"
+              class="w-12 h-12 rounded-xl border-2 border-gray-100 group-hover:border-accent-500 transition-colors shadow-sm"
+            />
             <div>
-              <a class="navbar-brand md:fs-1" href="index.html"
-                >JOSIE LAWCASTLE</a
+              <span
+                class="text-xl lg:text-2xl font-extrabold text-primary-900 group-hover:text-accent-600 transition-colors"
+                >JOSIE LAWCASTLE</span
               >
-              <p class="extra">A Lawfirm Extraordinaire</p>
+              <p
+                class="text-xs text-accent-600 font-semibold tracking-widest uppercase"
+              >
+                A Lawfirm Extraordinaire
+              </p>
             </div>
-          </div>
-      
+          </a>
+
+          <!-- Mobile Menu Button -->
           <button
-            class="navbar-toggler"
-            type="button"
-            data-bs-toggle="collapse"
-            data-bs-target="#navbarSupportedContent"
-            aria-controls="navbarSupportedContent"
-            aria-expanded="false"
-            aria-label="Toggle navigation"
+            id="mobile-menu-btn"
+            class="lg:hidden p-2 rounded-lg hover:bg-gray-100 transition-colors"
           >
-            <span class="navbar-toggler-icon"></span>
+            <i data-lucide="menu" class="w-6 h-6 text-primary-900"></i>
           </button>
-          <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <ul class="navbar-nav ms-auto">
-              <li class="nav-item active">
-                <a class="nav-link" href="index.html">Home</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="#about">About</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="#practice">Practice Areas</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="#team">Our team</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="#review">Review</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="#contact">Contact</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="/about.html">Events</a>
-              </li>
-            </ul>
-            <button type="button" class="btn-close btn-close-white close-btn" aria-label="Close">
 
-
-            </button>
-          </div>
-        </div>
-      </nav>
-
-      <aside id="ftco-hero" class="js-fullheight">
-        <div class="flexslider js-fullheight">
-          <ul class="slides">
-            <li
-              style="
-              background-image: url(images/hr2.jpg);
-              "
+          <!-- Desktop Navigation -->
+          <div class="hidden lg:flex items-center gap-1">
+            <a
+              href="#"
+              class="px-4 py-2 text-sm font-semibold text-primary-900 hover:text-accent-600 hover:bg-accent-50 rounded-lg transition-all"
+              >Home</a
             >
-              <div class="overlay-gradient"></div>
-              <div class="container mx-auto">
-                <div class="row">
-                  <div
-                    class="col-md-12 col-md-offset-2 text-center js-fullheight slider-text"
-                  >
-                    <div class="slider-text-inner">
-                      <h1>
-                        <strong
-                          >Get all your business and corporate legal needs seamlessly taken care of by us  and boast of a  thriving result.
-                          </strong
-                        >
-                      </h1>
-                      <p>
-                        <a
-                          class="btn btn-primary btn-lg btn-learn"
-                          href="#contact"
-                          >Get in touch</a
-                        >
-                      </p>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </li>
-            <li
-              style="
-                background-image: url(images/gavel.jpg);
-                background-size: cover;
-                background-position: center;
-                object-fit: cover;
-              "
+            <a
+              href="#about"
+              class="px-4 py-2 text-sm font-semibold text-gray-600 hover:text-accent-600 hover:bg-accent-50 rounded-lg transition-all"
+              >About</a
             >
-              <div class="overlay-gradient"></div>
-
-              <div class="container mx-auto text-center">
-                <div class="row">
-                  <div
-                    class="col-md-12 col-md-offset-2 text-center js-fullheight slider-text"
-                  >
-                    <div class="slider-text-inner text-center">
-                      <h1>
-                        <strong
-                          >Trust us to protect your intellectual assets. We're your reliable legal shield to keep you ahead of your competitors
-                          </strong
-                        >
-                      </h1>
-                      <p>
-                        <a
-                          class="btn btn-primary btn-lg btn-learn"
-                          href="#contact"
-                          >Get in touch</a
-                        >
-                      </p>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </li>
-            <li style="background-image: url(images/hero_4.jpg)">
-              <div class="overlay-gradient"></div>
-              <div class="container mx-auto">
-                <div class="row">
-                  <div
-                    class="col-md-12 col-md-offset-2 text-center js-fullheight slider-text"
-                  >
-                    <div class="slider-text-inner">
-                      <h1>
-                        <strong>Enjoy peace of mind  with our expert real estate legal solutions and guides.</strong>
-                      </h1>
-                      <p>
-                        <a
-                          class="btn btn-primary btn-lg btn-learn"
-                          href="#contact"
-                          >Get in touch</a
-                        >
-                      </p>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </li>
-          </ul>
-        </div>
-      </aside>
-      <div class="site-section" id="about">
-        <div class="container mx-auto " data-aos="fade-up">
-          <h5 class="text-center mb-4 about-us fw-normal">About us</h5>
-          <div class="row">
-            <div class="col-md-6">
-              <img src="images/team1.jpg" alt="About us" class="img-fluid" />
-            </div>
-            <div class="col-md-6 mt-3 mt-md-0">
-              <p class="text-justify" data-aos="fade-right">
-                Josie Lawcastle (JLC) is one of the leading full
-                service law firm in Nigeria, committed to providing zenith legal
-                services in Nigeria, Africa, and globally while meeting the
-                legal needs and demands of our esteemed clients.  <a
-                href=""
-                class="read-more"
-                data-name="About us"
-                data-bio='<p class="text-justify" data-aos="fade-in">
-                  The law firm comprises a team of vibrant, innovative, and
-                  competent Legal Practitioners who have emerged in this 21st
-                  century to provide professional services with little to
-                  reservation. Thus, JLC is mindful of modern day demands and the
-                  diversity that comes with it.
-                </p>
-                <p class="text-justify" data-aos="fade-left">
-                  JLC pioneered in January 2022 is headed and founded by Josephine
-                  Aransiola. Our legal team members are spread across the country
-                  and outside.
-                </p>'
-                >Read more</a
-              >
-              </p>
-              
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="container mx-auto row">
-        <!-- Our mission section -->
-        <div class="col-md-6 text-center " data-aos="slide-right">
-          <div class="services">
-            <span class="icon">
-              <i class="flaticon-jury"></i>
-            </span>
-            <div class="desc">
-              <h3><a href="#">Our Mission</a></h3>
-              <p>
-                Providing legal solutions; attending to the legal demands of our
-                clients with utmost regard to the precepts of excellence,
-                integrity and professionalism.
-              </p>
-            </div>
-          </div>
-        </div>
-        <!-- Our mission section ends -->
-
-        <!-- Our vision section starts -->
-        <div class="col-md-6 text-center " data-aos="slide-left">
-          <div class="services">
-            <span class="icon">
-              <i class="flaticon-lawyer"></i>
-            </span>
-            <div class="desc">
-              <h3><a href="#">Our Vision</a></h3>
-              <p>
-                To be one of the foremost leading legal services provider in
-                Nigeria, and attain great success at all we do.
-              </p>
-            </div>
+            <a
+              href="#practice"
+              class="px-4 py-2 text-sm font-semibold text-gray-600 hover:text-accent-600 hover:bg-accent-50 rounded-lg transition-all"
+              >Practice Areas</a
+            >
+            <a
+              href="#team"
+              class="px-4 py-2 text-sm font-semibold text-gray-600 hover:text-accent-600 hover:bg-accent-50 rounded-lg transition-all"
+              >Our Team</a
+            >
+            <a
+              href="#reviews"
+              class="px-4 py-2 text-sm font-semibold text-gray-600 hover:text-accent-600 hover:bg-accent-50 rounded-lg transition-all"
+              >Reviews</a
+            >
+            <a
+              href="#contact"
+              class="ml-2 px-6 py-2.5 text-sm font-bold text-primary-900 bg-accent-500 hover:bg-accent-600 rounded-xl shadow-lg shadow-accent-500/30 hover:shadow-accent-500/40 transition-all"
+              >Contact Us</a
+            >
           </div>
         </div>
       </div>
 
-
-      <div class="">
-        <img src="images/team5.jpg" alt="About us" class="img-fluid" />
-      </div>
-
-      <!-- Service 1 - Bootstrap Brain Component -->
-      <section class="py-5 py-xl-8" id="practice">
-
-        <div class="container " data-aos="fade-up">
-          <div class="row justify-content-md-center">
-            <div class="col-12 col-md-10 col-lg-8 col-xl-7 col-xxl-6">
-              <h2 class="mb-4 display-5 text-center">Areas of Expertise</h2>
-              <p class="text-secondary fs-5 mb-5 text-center">
-                We have 3 major pillars of practice which we fondly call, the
-                Big three (3). They are:
-              </p>
-              <hr class="w-50 mx-auto mb-5 mb-xl-9 border-dark-subtle" />
-            </div>
-          </div>
-        </div>
-
-        <div class="container overflow-hidden">
-          <div class="row gy-2 gx-5 p-md-0 p-4">
-             
-                <div class="col-12 col-sm-6 services col-lg-4 " data-aos="slide-right">
-                  <a class="read-more" href="#"
-                  data-name="Corporate Services"
-                  data-bio='<p class="text-lg font-bold ">
-                    Services Offered:
-                  </p>
-                  <ul class="list-disc pl-6">
-                    <li class="">
-                      Corporate Affairs Commission (CAC) services
-                    </li>
-                    <ul class=" text-justify">
-                      <li>
-                        As an accredited CAC agent, Our sphere of services covers
-                        registration of businesses, incorporations, corporate searches,
-                        post incorporation matters, guidance and supports to startups
-                        and established companies alike to ensure regulatory compliance
-                        and procure statutory and other necessary data and documents.
-                      </li>
-                    </ul>
-                    <li class=" text-justify">
-                      Contract/legal document matters
-                    </li>
-                    <ul class=" text-justify">
-                      <li>
-                        We draft and review business contracts for clients; prepare
-                        legal documents for businesses etc
-                      </li>
-                    </ul>
-                    <li class=" text-justify">Obtainment of licenses</li>
-                    <ul class=" text-justify">
-                      <li>
-                        We help you get the license or certification your business needs
-                        such as SCUML, NSITF, Business permit, etc
-                      </li>
-                    </ul>
-                    <li class=" text-justify">
-                      Employment Onboarding books
-                    </li>
-                    <ul class=" text-justify">
-                      <li>
-                        We as well help develop all necessary onboarding douments and
-                        books your organization need for employees.
-                      </li>
-                    </ul>
-                    <li class=" text-justify">Notary Public services</li>
-                    <ul class=" text-justify">
-                      <li>
-                        We relief our clients the hassle of notarisation by assisting
-                        them get their documents notarized. Notarization, which can be
-                        related to oathing enjoys wider usage and recognition from
-                        various Authorities, and institution as it can be done on
-                        documents to be used outside the country.
-                      </li>
-                    </ul>
-                  </ul>'
-                  class="read-more"
-                >    
-
-                  <div >
-                    <div class="text-center px-xl-2">
-                      <svg
-                        xmlns="http://www.w3.org/2000/svg"
-                        width="36"
-                        height="36"
-                        fill="currentColor"
-                        class="bi bi-1-circle-fill text-primary mb-4"
-                        viewBox="0 0 16 16"
-                      >
-                        <path
-                          fill-rule="evenodd"
-                          d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0ZM9.283 4.002V12H7.971V5.338h-.065L6.072 6.656V5.385l1.899-1.383h1.312Z"
-                        />
-                      </svg>
-                      <h5 class="m-2 fs-3 fw-normal">Corporate</h5>
-                      <p class="m-0 text-primary">
-                            Click to read more
-                          </p>
-                    </div>
-                  </div>
-                </a>
-                </div>
-
-                <div class="col-12 col-sm-6 services col-lg-4 " data-aos="slide-up">
-                  <a href="#" class="read-more" data-name="Intellectual Property (IP)" data-bio='       
-                  <p class="text-lg font-bold mb-2 ">
-                    Services Offered:
-                  </p>
-                  <ul class="list-disc pl-6">
-                    <li class="text-justify ">
-                      We protect the ownership of intellectual assets of organisations,
-                      brands,and businesses etc. These Intellectual property protection
-                      are such as trademarks, patents, copyrights, industrial design,
-                      trade secrets, trade names, domain name protection etc.
-                    </li>
-                    <li class="text-justify ">
-                      We offer intellectual property services both in Nigeria and Africa
-                      particularly including the African Intellectual Property
-                      Organization (OAPI) Countries like Benin, Burkina Faso, Cameroon,
-                      the Central African Republic, Chad, the Comoro Islands, Congo
-                      Brazzaville, Côte d’Ivoire, Equatorial Guinea, Gabon, Guinea,
-                      Guinea-Bissau, Mali, Mauritania, Niger, Senegal, Togo etc
-                    </li>
-                  </ul>
-                  <p class="text-lg text-justify font-bold mt-4 mb-2 ">
-                    We attend to intellectual property needs of our clientele with attendant expertise.
-                  </p>
-        
-                  '>
-                    <div>
-                      <div class="text-center px-xl-2">
-                        <svg
-                          xmlns="http://www.w3.org/2000/svg"
-                          width="36"
-                          height="36"
-                          fill="currentColor"
-                          class="bi bi-2-circle-fill text-primary mb-4"
-                          viewBox="0 0 16 16"
-                        >
-                          <path
-                            d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0ZM6.646 6.24c0-.691.493-1.306 1.336-1.306.756 0 1.313.492 1.313 1.236 0 .697-.469 1.23-.902 1.705l-2.971 3.293V12h5.344v-1.107H7.268v-.077l1.974-2.22.096-.107c.688-.763 1.287-1.428 1.287-2.43 0-1.266-1.031-2.215-2.613-2.215-1.758 0-2.637 1.19-2.637 2.402v.065h1.271v-.07Z"
-                          />
-                        </svg>
-                        <h5 class="m-2 fs-3 fw-normal">Intellectual Property</h5>
-                        <p class="m-0 text-primary">
-                          Click to read more
-                        </p>
-                      </div>
-                    </div>
-                  </a>
-                </div>
-
-                <div class="col-12 col-sm-6 services col-lg-4 " data-aos="slide-left">
-                  <a href="#" class="read-more" data-name="Real Estate" data-bio=' <h3 class="text-xl font-bold mt-8 mb-4  text-justify">
-                    Property Law Practice
-                  </h3>
-                  <p class=" text-justify">
-                    We are proficient in offering clients real estate legal services
-                    that include conducting property due diligence and title
-                    investigation before transaction; preparation of land title
-                    documents, procuring necessary land documents and other necessary
-                    property documents for our clients; real estate legal advisory etc.
-                  </p>'>
-                    <div >
-                      <div class="text-center px-xl-2">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" fill="currentColor" class="bi bi-3-circle-fill text-primary mb-4" viewBox="0 0 16 16">
-                          <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0Zm-8.082.414c.92 0 1.535.54 1.541 1.318.012.791-.615 1.36-1.588 1.354-.861-.006-1.482-.469-1.54-1.066H5.104c.047 1.177 1.05 2.144 2.754 2.144 1.653 0 2.954-.937 2.93-2.396-.023-1.278-1.031-1.846-1.734-1.916v-.07c.597-.1 1.505-.739 1.482-1.876-.03-1.177-1.043-2.074-2.637-2.062-1.675.006-2.59.984-2.625 2.12h1.248c.036-.556.557-1.054 1.348-1.054.785 0 1.348.486 1.348 1.195.006.715-.563 1.237-1.342 1.237h-.838v1.072h.879Z" />
-                        </svg>
-                        <h5 class="m-2 fs-3 fw-normal">Real Estate</h5>
-                        <p class="m-0 text-primary">
-                          Click to read more
-                        </p>
-                      </div>
-                    </div>
-                  </a>
-                </div>
-            
-          </div>
-        </div>
-      </section>
-      <div class="container px-4 md:px-24">
-        <div class="max-w-6xl mx-auto">
-          <h1 class="fs-4 fw-normal text-center fs-md-4 my-lg-5" data-aos="fade-up" style="color: gold; font-family: 'Roboto', sans-serif;">
-            Other legal services which are by-products of the big 3:
-          </h1>
-          <h3 class="text-xl fw-normal mt-8 mb-2  text-justify"  data-aos="fade-up">
-            General Litigation
-          </h3>
-          <p class="  text-justify" data-aos="fade-up">
-            We provide legal advice and representation to individual and
-            corporate organizations in disputes arising from their personal and
-            business activities. <a href="" data-bio='<p class="text-justify">We institute and defend different forms of
-            legal action in all courts in Nigeria, including Contracts, Land
-            Matters, Debt Recovery, Labour and Employment Matters, Human Rights
-            Enforcement, Banking and Insurance Matters, Matrimonial Causes and
-            Administration of Estate, Maritime and Aviation matters, among
-            others. We advise clients and respond on their behalf to
-            investigations by government agencies and regulators. We have
-            extensive practice in the various Courts in Nigeria.</p>'
-            class="read-more">read more</a>
-          </p>
-          <h3 class="text-xl fw-normal mt-8 mb-2   text-justify" data-aos="fade-up">
-            Probate Services
-          </h3>
-          <p class=" fw-normal text-justify" >
-            We primarily focus on assisting Applicants in obtaining Letters of
-            Administration for estates where the deceased passed away without a
-            valid will (intestate). <a href=""data-bio='<p class="text-justify">Our team ensures a smooth and efficient
-              process, guiding clients through the legal requirements to manage
-              and distribute the estate of their late loved ones in accordance
-              with the law.</p>' class="read-more">read more</a>
-          </p>
-          <h3 class="text-xl  fw-normal mt-8 mb-2   text-justify" data-aos="fade-up">
-            Legal Consultations
-          </h3>
-          <p class="  text-justify" data-aos="fade-up">
-            We deliver a wide range of legal advice to our clients on diverse
-            subject matters.
-          </p>
-          <h3 class="text-xl fw-normal mt-8 mb-2   text-justify" data-aos="fade-up">
-            Retainership
-          </h3>
-          <p class=" text-justify"   data-aos="fade-up">
-            We offer retainership to individuals and corporate entities alike.
-          </p>
-          <h3 class="text-xl   text-justify  fw-normal mt-8 mb-2" data-aos="fade-up">
-            Speaking Engagements
-          </h3>
-          <p class="text-lg   text-justify" data-aos="fade-up">
-            We believe that knowledge empowers businesses to make informed
-            decisions and navigate legalities. <a href="" class="read-more" data-bio='<p class="text-justify"> Through our speaking engagements,
-              we aim to equip corporate leaders, executives, and professionals
-              with knowledge and strategies they need to thrive in today’s
-              competitive environment. We offer speaking engagements that gives
-              invaluable insights into key legal topics. </p>'>read more</a>
-          </p>
+      <!-- Mobile Menu -->
+      <div
+        id="mobile-menu"
+        class="hidden lg:hidden bg-white border-t border-gray-100 shadow-lg"
+      >
+        <div class="px-4 py-4 space-y-2">
+          <a
+            href="#"
+            class="block px-4 py-3 text-sm font-semibold text-primary-900 hover:bg-accent-50 rounded-lg transition-all"
+            >Home</a
+          >
+          <a
+            href="#about"
+            class="block px-4 py-3 text-sm font-semibold text-gray-600 hover:bg-accent-50 rounded-lg transition-all"
+            >About</a
+          >
+          <a
+            href="#practice"
+            class="block px-4 py-3 text-sm font-semibold text-gray-600 hover:bg-accent-50 rounded-lg transition-all"
+            >Practice Areas</a
+          >
+          <a
+            href="#team"
+            class="block px-4 py-3 text-sm font-semibold text-gray-600 hover:bg-accent-50 rounded-lg transition-all"
+            >Our Team</a
+          >
+          <a
+            href="#reviews"
+            class="block px-4 py-3 text-sm font-semibold text-gray-600 hover:bg-accent-50 rounded-lg transition-all"
+            >Reviews</a
+          >
+          <a
+            href="#contact"
+            class="block px-4 py-3 text-sm font-bold text-center text-primary-900 bg-accent-500 hover:bg-accent-600 rounded-xl transition-all"
+            >Contact Us</a
+          >
         </div>
       </div>
+    </nav>
 
-      <div class="site-section px-2" id="ftco-about">
-        <div class="mx-auto container mx-auto" id="team">
-          <div class="row">
-            <div class="col-md-12 sm:text-justify ftco-heading">
-              <h2 class="  text-center fw-normal" >Our Team</h2>
-              <p>
-                <p class="lead   text-justify" data-aos="fade-up">
-                  We are proud to mention about our team of dedicated and
-                  experienced lawyers and para legals who are committed to
-                  delivering exceptional expert services to our clients.
+    <!-- Hero Section -->
+    <section class="relative min-h-screen flex items-center justify-center">
+      <!-- Background Image -->
+      <div class="absolute inset-0">
+        <img
+          src="images/hr2.jpg"
+          alt="Law Office"
+          class="w-full h-full object-cover"
+        />
+        <div class="hero-overlay absolute inset-0"></div>
+      </div>
 
-                  <a href="#"
-                  data-bio="Our
-              diverse team brings together wealth of knowledge, expertise, and
-              passion for law ensuring we provide comprehensive solutions to
-              meet our client’s unique demands. <br/> <br/>
-              Our team embodies professional lawyers and para legals that are
-              highly insightful, dedicated and competent. We are a team that
-              accord our clients, and their needs with the best professional
-              regards while providing a heartwarming legal service."
-                  class="read-more"
-                >read more</a>
-                </p>
-                
-              </p>
-            </div>
+      <!-- Content -->
+      <div
+        class="relative z-10 max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center py-32"
+        data-aos="fade-up"
+        data-aos-duration="1000"
+      >
+        <h1
+          class="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-white leading-tight mb-8"
+        >
+          Get all your business, compliance, and corporate legal needs
+          seamlessly taken care of by us and boast of a thriving result.
+        </h1>
+        <p class="text-lg text-gray-300 mb-10 max-w-2xl mx-auto">
+          Nigeria's trusted law firm for corporate governance, intellectual
+          property, and real estate legal solutions.
+        </p>
+        <a
+          href="#contact"
+          class="inline-flex items-center gap-2 px-8 py-4 bg-accent-500 hover:bg-accent-600 text-primary-900 font-bold text-lg rounded-2xl shadow-2xl shadow-accent-500/30 hover:shadow-accent-500/50 transform hover:-translate-y-1 transition-all"
+        >
+          <span>Get in Touch</span>
+          <i data-lucide="arrow-right" class="w-5 h-5"></i>
+        </a>
+      </div>
+
+      <!-- Scroll Indicator -->
+      <div
+        class="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce"
+      >
+        <i data-lucide="chevron-down" class="w-8 h-8 text-white/60"></i>
+      </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-24 lg:py-32 bg-white">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-16" data-aos="fade-up">
+          <h2
+            class="text-4xl lg:text-5xl font-extrabold text-primary-900 mb-4 relative inline-block pb-4 animated-underline"
+          >
+            About Us
+          </h2>
+        </div>
+
+        <div class="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
+          <div data-aos="fade-right" data-aos-delay="100">
+            <img
+              src="images/team1.jpg"
+              alt="Our Team"
+              class="w-full rounded-3xl shadow-2xl"
+            />
           </div>
-          <div class="row">
-            <h3 class="text-center">Meet some of our trusted Legal Allies:</h3>
-            <div
-              class="col-md-4 col-sm-4 " data-aos="fade-up"
-              data-animate-effect="fadeIn"
-            >
-              <div class="ftco-staff card">
-                <img
-                  src="images/DSC05270-Edit.jpg"
-                  class="card-img-top"
-                  alt="Template"
-                />
-                <div class="card-body">
-                  <h5 class="card-title">Josephine Aransiola</h5>
 
-                  <p class="card-text text-center">
-                    <a
-                      href="#read-more"
-                      data-name="Josephine Aransiola"
-                      data-bio="
-                              She is a seasoned Business & IP Lawyer, an Author and founder of
-                              the prestigious lawfirm, Josie LawCastle. Her legal expertise
-                              spans across different fields of law including business,
-                              corporate and intellectual property( IP) where she is
-                              specialised. <br/> <br/>
-                              She has garnered various certifications on
-                            different fields of law, such as the Business and Intellectual
-                            property laws from different notable organisations including
-                            World Intellectual Property Organisation (WIPO). <br/> <br/>
-                            Josephine is the author of the fast selling book, 'The Legal Protections for
-                            a Thriving Business' which is available on selar.co. She is as well the author of  the popularly known LinkedIn newsletter, Business & IP Legal Gist, with several hundreds of subscribers. <br/> <br/> She is a
-                            member of the Board of Director to Nubytes technologie Inc, an
-                            international tech company where she serves undaintedly. <br/> <br/>
-                            Furthermore, she is a member of some reputable organisations,
-                            both professional and non for profit organisations wherein she
-                            has served either in executive capacity or as a committee member
-                            such as Young Lawyers Forum (Past Vice Chairman); Nigeria Bar
-                            Association (NBA), International Federation of women Lawyers (
-                            FIDA); Champion Educational Foundation (Past CEF- Vice president
-                            1) member, Intellectual Property Law Advocacy Network
-                            (IPLAN). <br/> <br/> With her extensive experience in business law, and IP having
-                            being called to the Nigerian bar since 2017, she has been
-                            privileged in advising numerous clients, ranging from brands,
-                            entrepreneurs, Creatives, startups to multinational corporations
-                            on matters of corporate governance, intellectual property, and
-                            commercial transactions."
-                      class="read-more"
-                      >Read full bio</a
-                    >
-                  </p>
-                  <ul class="ftco-social-icons">
-                    <li>
-                      <a
-                        href="mailto:jlawcastle247@gmail.com?subject=Your Subject Here&body=Your message here."
-                        ><i class="icon-mail"></i
-                      ></a>
-                    </li>
-                    <li>
-                      <a href="#"><i class="icon-twitter"></i></a>
-                    </li>
-                    <li>
-                      <a
-                        href="https://www.linkedin.com/in/josephine-aransiola"
-                        target="_blank"
-                        ><i class="icon-linkedin"></i
-                      ></a>
-                    </li>
-                  </ul>
-                </div>
-              </div>
-            </div>
-
-            <div
-              class="col-md-4 col-sm-4 " data-aos="fade-up"
-              data-animate-effect="fadeIn"
-            >
-              <div class="ftco-staff card">
-                <img
-                  src="images/team4.jpg"
-                  class="card-img-top"
-                  alt="Template"
-                />
-                <div class="card-body">
-                  <h5 class="card-title text-center">
-                    Johnson Olushola Adeosun
-                  </h5>
-                  <p class="card-text text-center">
-                    <a
-                      href=""
-                      class="read-more"
-                      data-name="Johnson Olushola Adeosun"
-                      data-bio="He is a vibrant lawyer who had his undergraduate at the
-                              University of Ilorin. He is into the practice of law for more
-                              than a decade and specializes in several aspects of law ranging
-                              from land matters, divorce cases, election matters, criminal
-                              cases, Alternative Dispute Resolution, corporate and property
-                              related matters, among others.<br/> <br/> He is a member of the Nigerian Bar Association. He is also
-                              a poet, artist and editor. He is happily married with children."
-                      >Read full bio</a
-                    >
-                  </p>
-                  <ul class="ftco-social-icons">
-                    <li>
-                      <a href="#"><i class="icon-facebook"></i></a>
-                    </li>
-                    <li>
-                      <a href="#"><i class="icon-twitter"></i></a>
-                    </li>
-                    <li>
-                      <a href="#"><i class="icon-dribbble"></i></a>
-                    </li>
-                    <li>
-                      <a href="#"><i class="icon-linkedin"></i></a>
-                    </li>
-                  </ul>
-                </div>
-              </div>
-            </div>
-
-            <div
-              class="col-md-4 col-sm-4 " data-aos="fade-up"
-              data-animate-effect="fadeIn"
-            >
-              <div class="ftco-staff card">
-                <img
-                  src="images/team3.jpg"
-                  class="card-img-top"
-                  alt="Template"
-                />
-                <div class="card-body">
-                  <h5 class="card-title text-center">Adekunle Saheed Abiola</h5>
-                  <p class="card-text text-center">
-                    <a
-                      href=""
-                      class="read-more"
-                      data-name="Adekunle Saheed Abiola"
-                      data-bio="He obtained his LL.B (Hons) from the Kogi State University, Kogi State in 2014. He attended the Nigeria Law School, Victoria Island, Lagos, State and was subsequently called to the Nigerian Bar in 2016. He did his one year mandatory youth service (NYSC) as the legal adviser of Kings University,Osun State. He obtained his LL.M degree in Obafemi Awolowo University and presently pursuing  his PhD at the Fountain University. He is currently the Subdean, College of Law, Fountain University, Osun
-                      state. <br/><br/> 
-                      He has garnered wide experience and actively involved  in Litigation, Dispute Resolution, Corporate Law Practice, Family and Administrative Law, real estate law practice.<br/><br/>
-                      He is  happily married with lovely kids."
-                      >Read full bio</a
-                    >
-                  </p>
-                  <ul class="ftco-social-icons">
-                    <li>
-                      <a href="#"><i class="icon-facebook"></i></a>
-                    </li>
-                    <li>
-                      <a href="#"><i class="icon-twitter"></i></a>
-                    </li>
-                    <li>
-                      <a href="#"><i class="icon-dribbble"></i></a>
-                    </li>
-                    <li>
-                      <a href="#"><i class="icon-linkedin"></i></a>
-                    </li>
-                  </ul>
-                </div>
-              </div>
-            </div>
-
-            <div
-              class="col-md-4 col-sm-4 " data-aos="fade-up"
-              data-animate-effect="fadeIn"
-            >
-              <div class="card ftco-staff">
-                <img
-                  src="images/team2.jpg"
-                  class="card-img-top"
-                  alt="Template"
-                />
-                <div class="card-body">
-                  <h5 class="card-title text-center">Oluwaseyi Iyanu Eletta</h5>
-                  <h6 class="card-subtitle">(LL.B, LL.M, BL)</h6>
-                  <p class="card-text text-center">
-                    <a
-                      href=""
-                      class="read-more"
-                      data-name="Oluwaseyi Iyanu Eletta"
-                      data-bio="She is a versatile, resourceful lawyer with specialisations in
-                            corporate law, property law, and intellectual property law. She
-                            has over 7 years of legal practice with proven records of
-                            excellence. She is a member of the Nigerian Bar Association
-                            Oluwaseyi is as well an Executive Secretary, Institute of
-                            Capacity Building."
-                      >Read full bio</a
-                    >
-                  </p>
-                  <ul class="ftco-social-icons">
-                    <li>
-                      <a href="#"><i class="icon-facebook"></i></a>
-                    </li>
-                    <li>
-                      <a href="#"><i class="icon-twitter"></i></a>
-                    </li>
-                    <li>
-                      <a href="#"><i class="icon-dribbble"></i></a>
-                    </li>
-                    <li>
-                      <a href="#"><i class="icon-linkedin"></i></a>
-                    </li>
-                  </ul>
-                </div>
-              </div>
-            </div>
-
-            <p>
-              @ Josie Lawcastle, we also have para legals, and non-legal
-              practitioner staff
+          <div data-aos="fade-left" data-aos-delay="200">
+            <p class="text-lg text-gray-600 leading-relaxed mb-6">
+              Josie Lawcastle (JLC) is one of the leading full service law firm
+              in Nigeria, committed to providing zenith legal services in
+              Nigeria, Africa, and globally while meeting the legal needs and
+              demands of our esteemed clients.
+            </p>
+            <p class="text-lg text-gray-600 leading-relaxed mb-6">
+              The law firm comprises a team of vibrant, innovative, and
+              competent Legal Practitioners who have emerged in this 21st
+              century to provide professional services with little to
+              reservation. Thus, JLC is mindful of modern day demands and the
+              diversity that comes with it.
+            </p>
+            <p class="text-lg text-gray-600 leading-relaxed">
+              JLC pioneered in January 2022 is headed and founded by Josephine
+              Aransiola. Our legal team members are spread across the country
+              and outside.
             </p>
           </div>
         </div>
       </div>
-      <div
-        class="py-5 modal fade   data-aos="fade-up"overlay rounded-3"
-        id="myModal"
-        data-bs-backdrop="true"
-      >
-        <div class="modal-dialog">
-          <div class="modal-content">
-            <div class="modal-header">
-              <h4 class="modal-title fw-normal" id="modal-name"></h4>
-              <button
-                type="button"
-                class="btn-close border-0 rounded-circle fs-4 text-danger bg-transparent"
-                data-bs-dismiss="modal"
-                aria-label="Close"
-              ></button>
-            </div>
-            <div class="modal-body" id="modal-bio">
-              <!-- Modal content will be populated dynamically -->
-            </div>
-          </div>
-        </div>
-      </div>
+    </section>
 
-      <div id="ftco-testimonial" class="ftco-bg-section">
-        <div class="container mx-auto" id="review">
-          <div class="row">
-            <div class="col-md-12 text-center ftco-heading">
-              <h2 class="text-center">Reviews</h2>
-              <p class="text-center">See what people are saying about us</p>
-            </div>
-          </div>
-          <div class="row">
-            <div class="col-md-12">
-              <div class="row">
-                <div class="owl-carousel owl-carousel-fullwidth">
-                  <div class="item">
-                    <div class="testimony-slide col-md-12 active text-center">
-                      <figure class="text-center d-flex justify-content-center">
-                        <img src="images/review2.jpg" alt="user" />
-                      </figure>
-                      <span>Oladele Tolulope Oyedamola</span>
-                      <blockquote>
-                        <p class="text-justify">
-                          &ldquo;The firm's commitment to excellence, integrity,
-                          and client satisfaction is evident in every aspect.
-                          <a href="" class="read-more" data-bio="
-                          The law firm's professional team, state-of-the-art
-                          facilities, and organized structure make it an ideal
-                          environment for optimisation, excellence, and value
-                          <br />I highly recommend this exceptional law firm
-                          for: <br />
-                          - Clients requiring expert legal guidance <br />
-                          - Professionals looking for a dynamic work environment
-                          <br />
-                          - Aspiring lawyers seeking valuable experience&rdquo;
-                          ">
-                            Read more
-                          </a>
-                        </p>
-                      </blockquote>
-                    </div>
-                  </div>
-                  <div class="item">
-                    <div class="testimony-slide active text-center">
-                      <figure class="text-center d-flex justify-content-center">
-                        <img src="images/review1.jpg" alt="user" />
-                      </figure>
-                      <span>Taiwo Deborah</span>
-                      <blockquote>
-                        <p class="text-justify">
-                          &ldquo;Josie Lawcastle provides professional and
-                          reliable legal services with a strong focus on client
-                          satisfaction and effective representation.&rdquo;
-                        </p>
-                      </blockquote>
-                    </div>
-                  </div>
-                  <div class="item">
-                    <div class="testimony-slide active text-center">
-                      <figure class="text-center d-flex justify-content-center">
-                        <img src="images/ajayi.jpeg" alt="user" />
-                      </figure>
-                      <span>Ajayi Ebenezer </span>
-                      <blockquote>
-                        <p class="text-justify">
-                          &ldquo;I like the passion and efficiency with which
-                          Josie LawCastle approaches the legal needs of clients.
-                          It's all about client satisfaction.&rdquo;
-                        </p>
-                      </blockquote>
-                    </div>
-                  </div>
-                  <div class="item">
-                    <div class="testimony-slide active text-center">
-                      <figure class="text-center d-flex justify-content-center">
-                        <img src="images/review4.jpeg" class="rounded-circle" alt="user" />
-                      </figure>
-                      <span>Bigtime Events</span>
-                      <blockquote>
-                        <p class="text-justify">
-                          &ldquo;Kudos to Josie Lawcastle. They are really
-                          worthwhile. I particularly love their commitment and
-                          promptness.&rdquo;
-                        </p>
-                      </blockquote>
-                    </div>
-                  </div>
-                  <div class="item">
-                    <div class="testimony-slide active text-center">
-                      <figure class="text-center d-flex justify-content-center">
-                        <img src="images/ajike.jpeg" alt="user" />
-                      </figure>
-                      <span>Ajike Homes & Properties</span>
-                      <blockquote>
-                        <p class="text-justify">
-                          &ldquo;If I am to rate any lawfirm, I am rating Josie
-                          Lawcastle and it's on 5 star.&rdquo;
-                        </p>
-                      </blockquote>
-                    </div>
-                  </div>
-                  <div class="item">
-                    <div class="testimony-slide active text-center">
-                      <figure class="text-center d-flex justify-content-center">
-                        <img src="images/review3.jpeg" alt="user" />
-                      </figure>
-                      <span>Iyanuoluwa Gbemi (Younique Pastries)</span>
-                      <blockquote>
-                        <p class="text-justify">
-                          &ldquo;I get the best of legal service I need for my
-                          catering and cake enterprises (Younique enterprise)
-                          from Josie Lawcastle. They have always been my go-to
-                          lawyer on retainership.&rdquo;
-                        </p>
-                      </blockquote>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-
-      <div id="intro-bg">
-        <div
-          class="container"
-          id="contact"
-          style="border-radius: 1rem !important"
-        >
+    <!-- Mission & Vision -->
+    <section class="py-24 bg-gradient-to-br from-gray-50 to-gray-100">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="grid md:grid-cols-2 gap-8">
+          <!-- Mission -->
           <div
-            id="ftco-intro"
-            style="position: relative; margin-bottom: -140px !important"
+            class="card-hover bg-white p-10 rounded-3xl shadow-lg border border-gray-100"
+            data-aos="fade-up"
+            data-aos-delay="0"
           >
-            <div class="third-col">
-              <h2 class="h3">In Need of Legal Services?</h2>
-              <p>
-                Our experienced team is here to provide you with tailored legal
-                solutions to address your unique challenges.
-              </p>
+            <div
+              class="w-16 h-16 bg-accent-100 rounded-2xl flex items-center justify-center mb-6"
+            >
+              <i data-lucide="target" class="w-8 h-8 text-accent-600"></i>
             </div>
-            <div class="third-col third-col-color">
-              <h2 class="h3">Contact Us Today</h2>
-              <p>
-                Call/Message us at<strong> <a class="text-white" href="https://wa.link/mocv8t">+2349014305085</a>
-                  </strong
-                >
-              </p>
-              <p>
-                Email us at
-                <a
-                  style="color: white; text-decoration: underline"
-                  href="mailto:josielawcastle247@gmail.com"
-                  target="_blank"
-                  >josielawcastle247@gmail.com</a
-                >
-              </p>
-              <p>
-                We are dedicated to assisting you with professionalism and
-                expertise.
-              </p>
+            <h3 class="text-2xl font-bold text-primary-900 mb-4">
+              Our Mission
+            </h3>
+            <p class="text-gray-600 leading-relaxed">
+              Providing legal solutions; attending to the legal demands of our
+              clients with utmost regard to the precepts of excellence,
+              integrity and professionalism.
+            </p>
+          </div>
+
+          <!-- Vision -->
+          <div
+            class="card-hover bg-white p-10 rounded-3xl shadow-lg border border-gray-100"
+            data-aos="fade-up"
+            data-aos-delay="100"
+          >
+            <div
+              class="w-16 h-16 bg-primary-100 rounded-2xl flex items-center justify-center mb-6"
+            >
+              <i data-lucide="eye" class="w-8 h-8 text-primary-700"></i>
             </div>
+            <h3 class="text-2xl font-bold text-primary-900 mb-4">Our Vision</h3>
+            <p class="text-gray-600 leading-relaxed">
+              To be one of the foremost leading legal services provider in
+              Nigeria, and attain great success at all we do.
+            </p>
           </div>
         </div>
       </div>
-      <footer id="ftco-footer" role="contentinfo">
-        <div class="container">
-          <div class="row row-pb-md">
-            <div class="col-md-3 ftco-widget">
-              <h4 data-aos="slide-left">Josie Lawcastle</h4>
-              <p data-aos="slide-up" data-aos-delay="300">
-                Josie Lawcastle (JLC) is one of the leading full
-                service law firm in Nigeria, committed to providing zenith legal
-                services in Nigeria, Africa, and globally while meeting the
-                legal needs and demands of our esteemed clients.
-              </p>
-            </div>
-            <div class="col-md-3 col-md-push-1">
-              <h4 data-aos="slide-down">Navigation</h4>
-              <ul class="ftco-footer-links" >
-                <li class="active" data-aos="slide-up"><a href="index.html">Home</a></li>
-                <li data-aos="slide-up"><a href="#about">About</a></li>
-                <li data-aos="slide-up"><a href="#practice">Area of Expertise</a></li>
-                <li data-aos="slide-up"><a href="#team">Our team</a></li>
-                <li data-aos="slide-up"><a href="#review">Review</a></li>
-                <li data-aos="slide-up"><a href="#contact">Contact</a></li>
-              </ul>
-            </div>
+    </section>
 
-            <div class="col-md-3 col-md-push-1">
-              <h4 data-aos="slide-up">Contact Information</h4>
-              <ul class="ftco-footer-links">
-                <li data-aos="slide-up">
-                  No. 1, Josie Lawcastle ,<br />
-                  Off Offa-road, Lajorin,<br />
-                  Ilorin, Kwara state. <br />
-                  Nigeria.
-                </li>
-                <li data-aos="slide-up">
-                  <a href="https://wa.link/mocv8t">+2349014305085</a>
-                
-                </li>
+    <!-- Full Width Image -->
+    <section class="relative h-[400px] lg:h-[500px]">
+      <img
+        src="images/team5.jpg"
+        alt="Team Meeting"
+        class="w-full h-full object-cover"
+      />
+      <div
+        class="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent"
+      ></div>
+    </section>
 
-                <li data-aos="slide-up">
-                  <a href="mailto:josielawcastle247@gmail.com"
-                    >josielawcastle247@gmail.com</a
+    <!-- Practice Areas -->
+    <section id="practice" class="py-24 lg:py-32 bg-gray-50">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-16" data-aos="fade-up">
+          <h2
+            class="text-4xl lg:text-5xl font-extrabold text-primary-900 mb-4 relative inline-block pb-4 animated-underline"
+          >
+            Areas of Expertise
+          </h2>
+          <p class="text-xl text-gray-600 max-w-3xl mx-auto mt-8">
+            We have 3 major pillars of practice which we fondly call, the Big
+            Three (3). They are:
+          </p>
+        </div>
+
+        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <!-- Corporate Services -->
+          <div
+            class="card-hover bg-white p-8 rounded-3xl shadow-lg border border-gray-100 group"
+            data-aos="fade-up"
+            data-aos-delay="0"
+          >
+            <div
+              class="w-20 h-20 bg-accent-100 rounded-2xl flex items-center justify-center mb-6 group-hover:bg-accent-500 transition-colors"
+            >
+              <i
+                data-lucide="building-2"
+                class="w-10 h-10 text-accent-600 group-hover:text-white transition-colors"
+              ></i>
+            </div>
+            <div
+              class="inline-block px-3 py-1 bg-accent-100 text-accent-700 text-xs font-bold rounded-full mb-4"
+            >
+              01
+            </div>
+            <h3 class="text-2xl font-bold text-primary-900 mb-4">
+              Corporate Services
+            </h3>
+            <ul class="space-y-3 text-gray-600 mb-6">
+              <li class="flex items-start gap-2">
+                <i
+                  data-lucide="check"
+                  class="w-5 h-5 text-accent-600 mt-0.5 flex-shrink-0"
+                ></i>
+                <span>Corporate Affairs Commission (CAC) services</span>
+              </li>
+              <li class="flex items-start gap-2">
+                <i
+                  data-lucide="check"
+                  class="w-5 h-5 text-accent-600 mt-0.5 flex-shrink-0"
+                ></i>
+                <span>Contract and Legal Document Services</span>
+              </li>
+              <li class="flex items-start gap-2">
+                <i
+                  data-lucide="check"
+                  class="w-5 h-5 text-accent-600 mt-0.5 flex-shrink-0"
+                ></i>
+                <span>Obtainment of licenses (SCUML, NSITF, etc.)</span>
+              </li>
+              <li class="flex items-start gap-2">
+                <i
+                  data-lucide="check"
+                  class="w-5 h-5 text-accent-600 mt-0.5 flex-shrink-0"
+                ></i>
+                <span>Compliance Services (NAFDAC, SONCAP, NITDA)</span>
+              </li>
+            </ul>
+
+            <!-- Hidden expanded content -->
+            <div
+              id="corporate-details"
+              class="hidden mt-6 pt-6 border-t border-gray-100"
+            >
+              <h4 class="font-bold text-primary-900 mb-3">
+                Additional Services:
+              </h4>
+              <ul class="space-y-2 text-gray-600 text-sm">
+                <li class="flex items-start gap-2">
+                  <i
+                    data-lucide="check"
+                    class="w-4 h-4 text-accent-600 mt-0.5 flex-shrink-0"
+                  ></i>
+                  <span
+                    >As an accredited CAC agent, our services cover registration
+                    of businesses, incorporations, corporate searches, post
+                    incorporation matters, guidance and support to startups and
+                    established companies alike.</span
+                  >
+                </li>
+                <li class="flex items-start gap-2">
+                  <i
+                    data-lucide="check"
+                    class="w-4 h-4 text-accent-600 mt-0.5 flex-shrink-0"
+                  ></i>
+                  <span
+                    >We provide expert drafting and review of business
+                    contracts, and preparation of all necessary legal documents
+                    to protect your business operations.</span
+                  >
+                </li>
+                <li class="flex items-start gap-2">
+                  <i
+                    data-lucide="check"
+                    class="w-4 h-4 text-accent-600 mt-0.5 flex-shrink-0"
+                  ></i>
+                  <span
+                    >Employment Onboarding books - We develop all necessary
+                    onboarding documents and books your organization needs for
+                    employees.</span
+                  >
+                </li>
+                <li class="flex items-start gap-2">
+                  <i
+                    data-lucide="check"
+                    class="w-4 h-4 text-accent-600 mt-0.5 flex-shrink-0"
+                  ></i>
+                  <span
+                    >Notary Public services - We assist clients get their
+                    documents notarized for use within and outside the
+                    country.</span
+                  >
+                </li>
+                <li class="flex items-start gap-2">
+                  <i
+                    data-lucide="check"
+                    class="w-4 h-4 text-accent-600 mt-0.5 flex-shrink-0"
+                  ></i>
+                  <span
+                    >Legal/Professional Training - We organize high-quality
+                    professional training programmes and workshops for lawyers
+                    and professionals.</span
                   >
                 </li>
               </ul>
             </div>
 
-            <div class="col-md-3 col-md-push-1">
-              <h4>Opening Hours</h4>
-              <ul class="ftco-footer-links">
-                <li>Mon - Fri: 8:00am - 5:00pm</li>
-                <li>Sat 9:00am - 2:00pm</li>
+            <button
+              onclick="toggleDetails('corporate-details', this)"
+              class="inline-flex items-center gap-2 text-accent-600 font-semibold hover:text-accent-700 transition-colors cursor-pointer mt-4"
+            >
+              <span class="btn-text">Learn More</span>
+              <i
+                data-lucide="chevron-down"
+                class="w-4 h-4 transition-transform btn-icon"
+              ></i>
+            </button>
+          </div>
+
+          <!-- Intellectual Property -->
+          <div
+            class="card-hover bg-white p-8 rounded-3xl shadow-lg border border-gray-100 group"
+            data-aos="fade-up"
+            data-aos-delay="100"
+          >
+            <div
+              class="w-20 h-20 bg-primary-100 rounded-2xl flex items-center justify-center mb-6 group-hover:bg-primary-700 transition-colors"
+            >
+              <i
+                data-lucide="lightbulb"
+                class="w-10 h-10 text-primary-700 group-hover:text-white transition-colors"
+              ></i>
+            </div>
+            <div
+              class="inline-block px-3 py-1 bg-primary-100 text-primary-700 text-xs font-bold rounded-full mb-4"
+            >
+              02
+            </div>
+            <h3 class="text-2xl font-bold text-primary-900 mb-4">
+              Intellectual Property
+            </h3>
+            <ul class="space-y-3 text-gray-600 mb-6">
+              <li class="flex items-start gap-2">
+                <i
+                  data-lucide="check"
+                  class="w-5 h-5 text-primary-600 mt-0.5 flex-shrink-0"
+                ></i>
+                <span>Trademarks, Patents, Copyrights</span>
+              </li>
+              <li class="flex items-start gap-2">
+                <i
+                  data-lucide="check"
+                  class="w-5 h-5 text-primary-600 mt-0.5 flex-shrink-0"
+                ></i>
+                <span>Industrial Design Protection</span>
+              </li>
+              <li class="flex items-start gap-2">
+                <i
+                  data-lucide="check"
+                  class="w-5 h-5 text-primary-600 mt-0.5 flex-shrink-0"
+                ></i>
+                <span>Trade Secrets & Domain Names</span>
+              </li>
+              <li class="flex items-start gap-2">
+                <i
+                  data-lucide="check"
+                  class="w-5 h-5 text-primary-600 mt-0.5 flex-shrink-0"
+                ></i>
+                <span>OAPI Countries Coverage</span>
+              </li>
+            </ul>
+
+            <!-- Hidden expanded content -->
+            <div
+              id="ip-details"
+              class="hidden mt-6 pt-6 border-t border-gray-100"
+            >
+              <h4 class="font-bold text-primary-900 mb-3">Full IP Services:</h4>
+              <ul class="space-y-2 text-gray-600 text-sm">
+                <li class="flex items-start gap-2">
+                  <i
+                    data-lucide="check"
+                    class="w-4 h-4 text-primary-600 mt-0.5 flex-shrink-0"
+                  ></i>
+                  <span
+                    >We protect the ownership of intellectual assets of
+                    organisations, brands, and businesses. These include
+                    trademarks, patents, copyrights, industrial design, trade
+                    secrets, trade names, domain name protection etc.</span
+                  >
+                </li>
+                <li class="flex items-start gap-2">
+                  <i
+                    data-lucide="check"
+                    class="w-4 h-4 text-primary-600 mt-0.5 flex-shrink-0"
+                  ></i>
+                  <span
+                    >We offer intellectual property services both in Nigeria and
+                    Africa particularly including the African Intellectual
+                    Property Organization (OAPI) Countries.</span
+                  >
+                </li>
+                <li class="flex items-start gap-2">
+                  <i
+                    data-lucide="check"
+                    class="w-4 h-4 text-primary-600 mt-0.5 flex-shrink-0"
+                  ></i>
+                  <span
+                    >OAPI coverage includes: Benin, Burkina Faso, Cameroon, the
+                    Central African Republic, Chad, the Comoro Islands, Congo
+                    Brazzaville, Côte d'Ivoire, Equatorial Guinea, Gabon,
+                    Guinea, Guinea-Bissau, Mali, Mauritania, Niger, Senegal,
+                    Togo etc.</span
+                  >
+                </li>
               </ul>
+              <p class="mt-4 text-primary-700 font-medium text-sm">
+                We attend to intellectual property needs of our clientele with
+                attendant expertise.
+              </p>
+            </div>
+
+            <button
+              onclick="toggleDetails('ip-details', this)"
+              class="inline-flex items-center gap-2 text-primary-700 font-semibold hover:text-primary-800 transition-colors cursor-pointer mt-4"
+            >
+              <span class="btn-text">Learn More</span>
+              <i
+                data-lucide="chevron-down"
+                class="w-4 h-4 transition-transform btn-icon"
+              ></i>
+            </button>
+          </div>
+
+          <!-- Real Estate -->
+          <div
+            class="card-hover bg-white p-8 rounded-3xl shadow-lg border border-gray-100 group"
+            data-aos="fade-up"
+            data-aos-delay="200"
+          >
+            <div
+              class="w-20 h-20 bg-green-100 rounded-2xl flex items-center justify-center mb-6 group-hover:bg-green-600 transition-colors"
+            >
+              <i
+                data-lucide="home"
+                class="w-10 h-10 text-green-600 group-hover:text-white transition-colors"
+              ></i>
+            </div>
+            <div
+              class="inline-block px-3 py-1 bg-green-100 text-green-700 text-xs font-bold rounded-full mb-4"
+            >
+              03
+            </div>
+            <h3 class="text-2xl font-bold text-primary-900 mb-4">
+              Real Estate
+            </h3>
+            <ul class="space-y-3 text-gray-600 mb-6">
+              <li class="flex items-start gap-2">
+                <i
+                  data-lucide="check"
+                  class="w-5 h-5 text-green-600 mt-0.5 flex-shrink-0"
+                ></i>
+                <span>Property Due Diligence</span>
+              </li>
+              <li class="flex items-start gap-2">
+                <i
+                  data-lucide="check"
+                  class="w-5 h-5 text-green-600 mt-0.5 flex-shrink-0"
+                ></i>
+                <span>Title Investigation & Transfer</span>
+              </li>
+              <li class="flex items-start gap-2">
+                <i
+                  data-lucide="check"
+                  class="w-5 h-5 text-green-600 mt-0.5 flex-shrink-0"
+                ></i>
+                <span>Land Document Preparation</span>
+              </li>
+              <li class="flex items-start gap-2">
+                <i
+                  data-lucide="check"
+                  class="w-5 h-5 text-green-600 mt-0.5 flex-shrink-0"
+                ></i>
+                <span>Real Estate Legal Advisory</span>
+              </li>
+            </ul>
+
+            <!-- Hidden expanded content -->
+            <div
+              id="realestate-details"
+              class="hidden mt-6 pt-6 border-t border-gray-100"
+            >
+              <h4 class="font-bold text-primary-900 mb-3">
+                Property Law Practice:
+              </h4>
+              <ul class="space-y-2 text-gray-600 text-sm">
+                <li class="flex items-start gap-2">
+                  <i
+                    data-lucide="check"
+                    class="w-4 h-4 text-green-600 mt-0.5 flex-shrink-0"
+                  ></i>
+                  <span
+                    >We are proficient in offering clients real estate legal
+                    services that include conducting property due diligence and
+                    title investigation before transaction.</span
+                  >
+                </li>
+                <li class="flex items-start gap-2">
+                  <i
+                    data-lucide="check"
+                    class="w-4 h-4 text-green-600 mt-0.5 flex-shrink-0"
+                  ></i>
+                  <span
+                    >Preparation of land title documents, procuring necessary
+                    land documents and other necessary property documents for
+                    our clients.</span
+                  >
+                </li>
+                <li class="flex items-start gap-2">
+                  <i
+                    data-lucide="check"
+                    class="w-4 h-4 text-green-600 mt-0.5 flex-shrink-0"
+                  ></i>
+                  <span
+                    >Real estate legal advisory to help you make informed
+                    property investment decisions.</span
+                  >
+                </li>
+              </ul>
+            </div>
+
+            <button
+              onclick="toggleDetails('realestate-details', this)"
+              class="inline-flex items-center gap-2 text-green-600 font-semibold hover:text-green-700 transition-colors cursor-pointer mt-4"
+            >
+              <span class="btn-text">Learn More</span>
+              <i
+                data-lucide="chevron-down"
+                class="w-4 h-4 transition-transform btn-icon"
+              ></i>
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Other Legal Services -->
+    <section class="py-24 bg-white">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-16" data-aos="fade-up">
+          <h2
+            class="text-3xl lg:text-4xl font-extrabold text-gold-gradient mb-4"
+          >
+            Other Legal Services
+          </h2>
+        </div>
+
+        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div
+            class="p-6 rounded-2xl border-l-4 border-accent-500 bg-gray-50"
+            data-aos="fade-up"
+            data-aos-delay="0"
+          >
+            <h4 class="text-xl font-bold text-primary-900 mb-3">
+              General Litigation
+            </h4>
+            <p class="text-gray-600">
+              We provide legal advice and representation in disputes arising
+              from personal and business activities across all courts in
+              Nigeria.
+            </p>
+          </div>
+
+          <div
+            class="p-6 rounded-2xl border-l-4 border-primary-500 bg-gray-50"
+            data-aos="fade-up"
+            data-aos-delay="50"
+          >
+            <h4 class="text-xl font-bold text-primary-900 mb-3">
+              Probate Services
+            </h4>
+            <p class="text-gray-600">
+              Assisting Applicants in obtaining Letters of Administration for
+              estates where the deceased passed away without a valid will.
+            </p>
+          </div>
+
+          <div
+            class="p-6 rounded-2xl border-l-4 border-green-500 bg-gray-50"
+            data-aos="fade-up"
+            data-aos-delay="100"
+          >
+            <h4 class="text-xl font-bold text-primary-900 mb-3">
+              Legal Consultations
+            </h4>
+            <p class="text-gray-600">
+              We deliver a wide range of legal advice to our clients on diverse
+              subject matters.
+            </p>
+          </div>
+
+          <div
+            class="p-6 rounded-2xl border-l-4 border-blue-500 bg-gray-50"
+            data-aos="fade-up"
+            data-aos-delay="150"
+          >
+            <h4 class="text-xl font-bold text-primary-900 mb-3">
+              Retainership
+            </h4>
+            <p class="text-gray-600">
+              We offer retainership to individuals and corporate entities alike
+              for ongoing legal support.
+            </p>
+          </div>
+
+          <div
+            class="p-6 rounded-2xl border-l-4 border-purple-500 bg-gray-50"
+            data-aos="fade-up"
+            data-aos-delay="200"
+          >
+            <h4 class="text-xl font-bold text-primary-900 mb-3">
+              Notary Public Services
+            </h4>
+            <p class="text-gray-600">
+              We assist clients in getting their documents notarized for use
+              within and outside the country.
+            </p>
+          </div>
+
+          <div
+            class="p-6 rounded-2xl border-l-4 border-orange-500 bg-gray-50"
+            data-aos="fade-up"
+            data-aos-delay="250"
+          >
+            <h4 class="text-xl font-bold text-primary-900 mb-3">
+              Speaking Engagements
+            </h4>
+            <p class="text-gray-600">
+              We offer speaking engagements that give invaluable insights into
+              key legal topics for professionals.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Team Section -->
+    <section
+      id="team"
+      class="py-24 lg:py-32 bg-gradient-to-br from-gray-50 to-gray-100"
+    >
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-16" data-aos="fade-up">
+          <h2
+            class="text-4xl lg:text-5xl font-extrabold text-primary-900 mb-4 relative inline-block pb-4 animated-underline"
+          >
+            Our Team
+          </h2>
+          <p class="text-xl text-gray-600 max-w-3xl mx-auto mt-8">
+            We are proud to mention about our team of dedicated and experienced
+            lawyers and para legals who are committed to delivering exceptional
+            expert services to our clients.
+          </p>
+        </div>
+
+        <h3
+          class="text-2xl font-bold text-center text-gray-700 mb-12"
+          data-aos="fade-up"
+          data-aos-delay="100"
+        >
+          Meet some of our trusted Legal Allies:
+        </h3>
+
+        <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+          <!-- Team Member 1 -->
+          <div
+            class="card-hover team-img-zoom bg-white rounded-3xl overflow-hidden shadow-lg border border-gray-100"
+            data-aos="fade-up"
+            data-aos-delay="0"
+          >
+            <div class="h-80 overflow-hidden">
+              <img
+                src="images/DSC05270-Edit.jpg"
+                alt="Josephine Aransiola"
+                class="w-full h-full object-cover"
+              />
+            </div>
+            <div class="p-6 text-center">
+              <h4 class="text-xl font-bold text-primary-900 mb-1">
+                Josephine Aransiola
+              </h4>
+              <p class="text-accent-600 text-sm font-medium mb-4">
+                Founder & Principal Partner
+              </p>
+              <div class="flex justify-center gap-3">
+                <a
+                  href="mailto:jlawcastle247@gmail.com"
+                  class="w-10 h-10 bg-gray-100 hover:bg-accent-500 rounded-xl flex items-center justify-center text-gray-500 hover:text-white transition-all"
+                >
+                  <i data-lucide="mail" class="w-5 h-5"></i>
+                </a>
+                <a
+                  href="https://www.linkedin.com/in/josephine-aransiola"
+                  target="_blank"
+                  class="w-10 h-10 bg-gray-100 hover:bg-accent-500 rounded-xl flex items-center justify-center text-gray-500 hover:text-white transition-all"
+                >
+                  <i data-lucide="linkedin" class="w-5 h-5"></i>
+                </a>
+              </div>
             </div>
           </div>
 
-            <div>
-              <h3 class="text-white">Newsletter</h3>
-              <a href="https://www.linkedin.com/newsletters/the-business-ip-legal-gist-7185689767794130945" target="_blank">
-                <button class="btn btn-primary mb-5">
-                  <i class="icon-linkedin"></i> Click to join our newsletter subscribers
-                </button>
-              </a>
+          <!-- Team Member 2 -->
+          <div
+            class="card-hover team-img-zoom bg-white rounded-3xl overflow-hidden shadow-lg border border-gray-100"
+            data-aos="fade-up"
+            data-aos-delay="100"
+          >
+            <div class="h-80 overflow-hidden">
+              <img
+                src="images/team4.jpg"
+                alt="Johnson Olushola Adeosun"
+                class="w-full h-full object-cover"
+              />
             </div>
-          
-          <div class="row copyright">
-            <div class="col-md-12 mb-5 d-flex justify-content-center">
-
-              <img src="images/logo3.png" style="width: 100px;" class="img-thumbnail" alt="">
-            </div>
-            <div class="col-md-12 text-center">
-              <p>
-                Copyright &copy;
-                <script>
-                  document.write(new Date().getFullYear());
-                </script>
-                All rights reserved | Josie Lawcastle
+            <div class="p-6 text-center">
+              <h4 class="text-xl font-bold text-primary-900 mb-1">
+                Johnson Olushola Adeosun
+              </h4>
+              <p class="text-accent-600 text-sm font-medium mb-4">
+                Senior Associate
               </p>
+              <div class="flex justify-center gap-3">
+                <a
+                  href="#"
+                  class="w-10 h-10 bg-gray-100 hover:bg-accent-500 rounded-xl flex items-center justify-center text-gray-500 hover:text-white transition-all"
+                >
+                  <i data-lucide="mail" class="w-5 h-5"></i>
+                </a>
+                <a
+                  href="#"
+                  class="w-10 h-10 bg-gray-100 hover:bg-accent-500 rounded-xl flex items-center justify-center text-gray-500 hover:text-white transition-all"
+                >
+                  <i data-lucide="linkedin" class="w-5 h-5"></i>
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Team Member 3 -->
+          <div
+            class="card-hover team-img-zoom bg-white rounded-3xl overflow-hidden shadow-lg border border-gray-100"
+            data-aos="fade-up"
+            data-aos-delay="200"
+          >
+            <div class="h-80 overflow-hidden">
+              <img
+                src="images/team3.jpg"
+                alt="Adekunle Saheed Abiola"
+                class="w-full h-full object-cover"
+              />
+            </div>
+            <div class="p-6 text-center">
+              <h4 class="text-xl font-bold text-primary-900 mb-1">
+                Adekunle Saheed Abiola
+              </h4>
+              <p class="text-accent-600 text-sm font-medium mb-4">Associate</p>
+              <div class="flex justify-center gap-3">
+                <a
+                  href="#"
+                  class="w-10 h-10 bg-gray-100 hover:bg-accent-500 rounded-xl flex items-center justify-center text-gray-500 hover:text-white transition-all"
+                >
+                  <i data-lucide="mail" class="w-5 h-5"></i>
+                </a>
+                <a
+                  href="#"
+                  class="w-10 h-10 bg-gray-100 hover:bg-accent-500 rounded-xl flex items-center justify-center text-gray-500 hover:text-white transition-all"
+                >
+                  <i data-lucide="linkedin" class="w-5 h-5"></i>
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Team Member 4 -->
+          <div
+            class="card-hover team-img-zoom bg-white rounded-3xl overflow-hidden shadow-lg border border-gray-100"
+            data-aos="fade-up"
+            data-aos-delay="300"
+          >
+            <div class="h-80 overflow-hidden">
+              <img
+                src="images/team2.jpg"
+                alt="Oluwaseyi Iyanu Eletta"
+                class="w-full h-full object-cover"
+              />
+            </div>
+            <div class="p-6 text-center">
+              <h4 class="text-xl font-bold text-primary-900 mb-1">
+                Oluwaseyi Iyanu Eletta
+              </h4>
+              <p class="text-accent-600 text-sm font-medium mb-4">
+                (LL.B, LL.M, BL)
+              </p>
+              <div class="flex justify-center gap-3">
+                <a
+                  href="#"
+                  class="w-10 h-10 bg-gray-100 hover:bg-accent-500 rounded-xl flex items-center justify-center text-gray-500 hover:text-white transition-all"
+                >
+                  <i data-lucide="mail" class="w-5 h-5"></i>
+                </a>
+                <a
+                  href="#"
+                  class="w-10 h-10 bg-gray-100 hover:bg-accent-500 rounded-xl flex items-center justify-center text-gray-500 hover:text-white transition-all"
+                >
+                  <i data-lucide="linkedin" class="w-5 h-5"></i>
+                </a>
+              </div>
             </div>
           </div>
         </div>
-      </footer>
-      <div class="gototop js-top">
-        <a href="#" class="js-gotop"><i class="icon-arrow-up"></i></a>
-      </div>
 
-      <!-- jQuery -->
-      <script src="js/jquery.min.js"></script>
-      <!-- jQuery Easing -->
-      <script src="js/jquery.easing.1.3.js"></script>
-      <!-- Bootstrap -->
-      <script src="js/bootstrap.min.js"></script>
-      <!-- Waypoints -->
-      <script src="js/jquery.waypoints.min.js"></script>
-      <!-- Stellar Parallax -->
-      <script src="js/jquery.stellar.min.js"></script>
-      <!-- Carousel -->
-      <script src="js/owl.carousel.min.js"></script>
-      <!-- Flexslider -->
-      <script src="js/jquery.flexslider-min.js"></script>
-      <!-- countTo -->
-      <script src="js/jquery.countTo.js"></script>
-      <!-- Magnific Popup -->
-      <script src="js/jquery.magnific-popup.min.js"></script>
-      <script src="js/magnific-popup-options.js"></script>
-      <!-- Main -->
-      <script src="js/main.js"></script>
-      <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-      <script>
-        AOS.init({
-          duration: 1000,
+        <p class="text-center text-gray-600 mt-12" data-aos="fade-up">
+          @ Josie Lawcastle, we also have para legals and non-legal practitioner
+          staff
+        </p>
+      </div>
+    </section>
+
+    <!-- Reviews Section -->
+    <section id="reviews" class="py-24 bg-white">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-16" data-aos="fade-up">
+          <h2
+            class="text-4xl lg:text-5xl font-extrabold text-primary-900 mb-4 relative inline-block pb-4 animated-underline"
+          >
+            Reviews
+          </h2>
+          <p class="text-xl text-gray-600">
+            See what people are saying about us
+          </p>
+        </div>
+
+        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div
+            class="card-hover bg-gradient-to-br from-gray-50 to-white p-8 rounded-3xl border border-gray-100 shadow-lg"
+            data-aos="fade-up"
+            data-aos-delay="0"
+          >
+            <div class="flex items-center gap-4 mb-6">
+              <img
+                src="images/review2.jpg"
+                alt="Oladele Tolulope"
+                class="w-16 h-16 rounded-full object-cover border-4 border-accent-200"
+              />
+              <div>
+                <h4 class="font-bold text-primary-900">
+                  Oladele Tolulope Oyedamola
+                </h4>
+                <div class="flex gap-1 text-accent-500">
+                  <i data-lucide="star" class="w-4 h-4 fill-current"></i>
+                  <i data-lucide="star" class="w-4 h-4 fill-current"></i>
+                  <i data-lucide="star" class="w-4 h-4 fill-current"></i>
+                  <i data-lucide="star" class="w-4 h-4 fill-current"></i>
+                  <i data-lucide="star" class="w-4 h-4 fill-current"></i>
+                </div>
+              </div>
+            </div>
+            <p class="text-gray-600 italic leading-relaxed">
+              "The firm's commitment to excellence, integrity, and client
+              satisfaction is evident in every aspect. I highly recommend this
+              exceptional law firm."
+            </p>
+          </div>
+
+          <div
+            class="card-hover bg-gradient-to-br from-gray-50 to-white p-8 rounded-3xl border border-gray-100 shadow-lg"
+            data-aos="fade-up"
+            data-aos-delay="100"
+          >
+            <div class="flex items-center gap-4 mb-6">
+              <img
+                src="images/review1.jpg"
+                alt="Taiwo Deborah"
+                class="w-16 h-16 rounded-full object-cover border-4 border-accent-200"
+              />
+              <div>
+                <h4 class="font-bold text-primary-900">Taiwo Deborah</h4>
+                <div class="flex gap-1 text-accent-500">
+                  <i data-lucide="star" class="w-4 h-4 fill-current"></i>
+                  <i data-lucide="star" class="w-4 h-4 fill-current"></i>
+                  <i data-lucide="star" class="w-4 h-4 fill-current"></i>
+                  <i data-lucide="star" class="w-4 h-4 fill-current"></i>
+                  <i data-lucide="star" class="w-4 h-4 fill-current"></i>
+                </div>
+              </div>
+            </div>
+            <p class="text-gray-600 italic leading-relaxed">
+              "Josie Lawcastle provides professional and reliable legal services
+              with a strong focus on client satisfaction and effective
+              representation."
+            </p>
+          </div>
+
+          <div
+            class="card-hover bg-gradient-to-br from-gray-50 to-white p-8 rounded-3xl border border-gray-100 shadow-lg"
+            data-aos="fade-up"
+            data-aos-delay="200"
+          >
+            <div class="flex items-center gap-4 mb-6">
+              <img
+                src="images/ajayi.jpeg"
+                alt="Ajayi Ebenezer"
+                class="w-16 h-16 rounded-full object-cover border-4 border-accent-200"
+              />
+              <div>
+                <h4 class="font-bold text-primary-900">Ajayi Ebenezer</h4>
+                <div class="flex gap-1 text-accent-500">
+                  <i data-lucide="star" class="w-4 h-4 fill-current"></i>
+                  <i data-lucide="star" class="w-4 h-4 fill-current"></i>
+                  <i data-lucide="star" class="w-4 h-4 fill-current"></i>
+                  <i data-lucide="star" class="w-4 h-4 fill-current"></i>
+                  <i data-lucide="star" class="w-4 h-4 fill-current"></i>
+                </div>
+              </div>
+            </div>
+            <p class="text-gray-600 italic leading-relaxed">
+              "I like the passion and efficiency with which Josie LawCastle
+              approaches the legal needs of clients. It's all about client
+              satisfaction."
+            </p>
+          </div>
+
+          <div
+            class="card-hover bg-gradient-to-br from-gray-50 to-white p-8 rounded-3xl border border-gray-100 shadow-lg"
+            data-aos="fade-up"
+            data-aos-delay="300"
+          >
+            <div class="flex items-center gap-4 mb-6">
+              <img
+                src="images/review4.jpeg"
+                alt="Bigtime Events"
+                class="w-16 h-16 rounded-full object-cover border-4 border-accent-200"
+              />
+              <div>
+                <h4 class="font-bold text-primary-900">Bigtime Events</h4>
+                <div class="flex gap-1 text-accent-500">
+                  <i data-lucide="star" class="w-4 h-4 fill-current"></i>
+                  <i data-lucide="star" class="w-4 h-4 fill-current"></i>
+                  <i data-lucide="star" class="w-4 h-4 fill-current"></i>
+                  <i data-lucide="star" class="w-4 h-4 fill-current"></i>
+                  <i data-lucide="star" class="w-4 h-4 fill-current"></i>
+                </div>
+              </div>
+            </div>
+            <p class="text-gray-600 italic leading-relaxed">
+              "Kudos to Josie Lawcastle. They are really worthwhile. I
+              particularly love their commitment and promptness."
+            </p>
+          </div>
+
+          <div
+            class="card-hover bg-gradient-to-br from-gray-50 to-white p-8 rounded-3xl border border-gray-100 shadow-lg"
+            data-aos="fade-up"
+            data-aos-delay="400"
+          >
+            <div class="flex items-center gap-4 mb-6">
+              <img
+                src="images/ajike.jpeg"
+                alt="Ajike Homes"
+                class="w-16 h-16 rounded-full object-cover border-4 border-accent-200"
+              />
+              <div>
+                <h4 class="font-bold text-primary-900">
+                  Ajike Homes & Properties
+                </h4>
+                <div class="flex gap-1 text-accent-500">
+                  <i data-lucide="star" class="w-4 h-4 fill-current"></i>
+                  <i data-lucide="star" class="w-4 h-4 fill-current"></i>
+                  <i data-lucide="star" class="w-4 h-4 fill-current"></i>
+                  <i data-lucide="star" class="w-4 h-4 fill-current"></i>
+                  <i data-lucide="star" class="w-4 h-4 fill-current"></i>
+                </div>
+              </div>
+            </div>
+            <p class="text-gray-600 italic leading-relaxed">
+              "If I am to rate any lawfirm, I am rating Josie Lawcastle and it's
+              on 5 star."
+            </p>
+          </div>
+
+          <div
+            class="card-hover bg-gradient-to-br from-gray-50 to-white p-8 rounded-3xl border border-gray-100 shadow-lg"
+            data-aos="fade-up"
+            data-aos-delay="500"
+          >
+            <div class="flex items-center gap-4 mb-6">
+              <img
+                src="images/review3.jpeg"
+                alt="Iyanuoluwa Gbemi"
+                class="w-16 h-16 rounded-full object-cover border-4 border-accent-200"
+              />
+              <div>
+                <h4 class="font-bold text-primary-900">Iyanuoluwa Gbemi</h4>
+                <p class="text-xs text-gray-500">Younique Pastries</p>
+                <div class="flex gap-1 text-accent-500">
+                  <i data-lucide="star" class="w-4 h-4 fill-current"></i>
+                  <i data-lucide="star" class="w-4 h-4 fill-current"></i>
+                  <i data-lucide="star" class="w-4 h-4 fill-current"></i>
+                  <i data-lucide="star" class="w-4 h-4 fill-current"></i>
+                  <i data-lucide="star" class="w-4 h-4 fill-current"></i>
+                </div>
+              </div>
+            </div>
+            <p class="text-gray-600 italic leading-relaxed">
+              "I get the best of legal service I need for my catering and cake
+              enterprises from Josie Lawcastle. They have always been my go-to
+              lawyer on retainership."
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section
+      id="contact"
+      class="py-20 bg-gradient-to-r from-primary-900 via-primary-800 to-primary-900"
+    >
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="grid lg:grid-cols-2 gap-12 items-center">
+          <div data-aos="fade-right">
+            <h2 class="text-4xl lg:text-5xl font-extrabold text-white mb-6">
+              In Need of Legal Services?
+            </h2>
+            <p class="text-xl text-gray-300 mb-8">
+              Our experienced team is here to provide you with tailored legal
+              solutions to address your unique challenges.
+            </p>
+
+            <div class="space-y-4">
+              <a
+                href="https://wa.link/mocv8t"
+                class="flex items-center gap-4 text-white hover:text-accent-400 transition-colors group"
+              >
+                <div
+                  class="w-12 h-12 bg-white/10 rounded-xl flex items-center justify-center group-hover:bg-accent-500 transition-colors"
+                >
+                  <i data-lucide="phone" class="w-6 h-6"></i>
+                </div>
+                <span class="text-lg font-semibold">+2349014305085</span>
+              </a>
+
+              <a
+                href="mailto:josielawcastle247@gmail.com"
+                class="flex items-center gap-4 text-white hover:text-accent-400 transition-colors group"
+              >
+                <div
+                  class="w-12 h-12 bg-white/10 rounded-xl flex items-center justify-center group-hover:bg-accent-500 transition-colors"
+                >
+                  <i data-lucide="mail" class="w-6 h-6"></i>
+                </div>
+                <span class="text-lg font-semibold"
+                  >josielawcastle247@gmail.com</span
+                >
+              </a>
+            </div>
+          </div>
+
+          <div
+            class="bg-accent-500 p-10 rounded-3xl shadow-2xl"
+            data-aos="fade-left"
+          >
+            <h3 class="text-2xl font-bold text-primary-900 mb-4">
+              Contact Us Today
+            </h3>
+            <p class="text-primary-800 mb-6">
+              We are dedicated to assisting you with professionalism and
+              expertise. Reach out to us via WhatsApp or email.
+            </p>
+            <a
+              href="https://wa.link/mocv8t"
+              class="inline-flex items-center gap-2 px-8 py-4 bg-primary-900 hover:bg-primary-800 text-white font-bold rounded-xl transition-all shadow-lg"
+            >
+              <i data-lucide="message-circle" class="w-5 h-5"></i>
+              <span>Chat on WhatsApp</span>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-gray-400 pt-20 pb-8">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-12 mb-16">
+          <!-- About -->
+          <div>
+            <div class="flex items-center gap-3 mb-6">
+              <img
+                src="images/logo3.png"
+                alt="Josie Lawcastle"
+                class="w-12 h-12 rounded-xl"
+              />
+              <h4 class="text-xl font-bold text-white">Josie Lawcastle</h4>
+            </div>
+            <p class="text-gray-400 leading-relaxed">
+              One of the leading full service law firm in Nigeria, committed to
+              providing zenith legal services globally.
+            </p>
+          </div>
+
+          <!-- Navigation -->
+          <div>
+            <h4 class="text-lg font-bold text-white mb-6 relative inline-block">
+              Navigation
+              <span
+                class="absolute -bottom-2 left-0 w-10 h-1 bg-accent-500 rounded-full"
+              ></span>
+            </h4>
+            <ul class="space-y-3">
+              <li>
+                <a href="#" class="hover:text-accent-500 transition-colors"
+                  >Home</a
+                >
+              </li>
+              <li>
+                <a href="#about" class="hover:text-accent-500 transition-colors"
+                  >About</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#practice"
+                  class="hover:text-accent-500 transition-colors"
+                  >Practice Areas</a
+                >
+              </li>
+              <li>
+                <a href="#team" class="hover:text-accent-500 transition-colors"
+                  >Our Team</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#reviews"
+                  class="hover:text-accent-500 transition-colors"
+                  >Reviews</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#contact"
+                  class="hover:text-accent-500 transition-colors"
+                  >Contact</a
+                >
+              </li>
+            </ul>
+          </div>
+
+          <!-- Contact -->
+          <div>
+            <h4 class="text-lg font-bold text-white mb-6 relative inline-block">
+              Contact Info
+              <span
+                class="absolute -bottom-2 left-0 w-10 h-1 bg-accent-500 rounded-full"
+              ></span>
+            </h4>
+            <ul class="space-y-3">
+              <li class="flex items-start gap-3">
+                <i
+                  data-lucide="map-pin"
+                  class="w-5 h-5 text-accent-500 mt-1 flex-shrink-0"
+                ></i>
+                <span
+                  >No. 1, Josie Lawcastle, Off Offa-road, Lajorin, Ilorin, Kwara
+                  state, Nigeria.</span
+                >
+              </li>
+              <li>
+                <a
+                  href="https://wa.link/mocv8t"
+                  class="flex items-center gap-3 hover:text-accent-500 transition-colors"
+                >
+                  <i data-lucide="phone" class="w-5 h-5 text-accent-500"></i>
+                  <span>+2349014305085</span>
+                </a>
+              </li>
+              <li>
+                <a
+                  href="mailto:josielawcastle247@gmail.com"
+                  class="flex items-center gap-3 hover:text-accent-500 transition-colors"
+                >
+                  <i data-lucide="mail" class="w-5 h-5 text-accent-500"></i>
+                  <span>josielawcastle247@gmail.com</span>
+                </a>
+              </li>
+            </ul>
+          </div>
+
+          <!-- Hours -->
+          <div>
+            <h4 class="text-lg font-bold text-white mb-6 relative inline-block">
+              Opening Hours
+              <span
+                class="absolute -bottom-2 left-0 w-10 h-1 bg-accent-500 rounded-full"
+              ></span>
+            </h4>
+            <ul class="space-y-3">
+              <li class="flex items-center gap-3">
+                <i data-lucide="clock" class="w-5 h-5 text-accent-500"></i>
+                <span>Mon - Fri: 8:00am - 5:00pm</span>
+              </li>
+              <li class="flex items-center gap-3">
+                <i data-lucide="clock" class="w-5 h-5 text-accent-500"></i>
+                <span>Sat: 9:00am - 2:00pm</span>
+              </li>
+            </ul>
+
+            <div class="mt-8">
+              <h5 class="text-white font-semibold mb-3">Newsletter</h5>
+              <a
+                href="https://www.linkedin.com/newsletters/the-business-ip-legal-gist-7185689767794130945"
+                target="_blank"
+                class="inline-flex items-center gap-2 px-6 py-3 bg-accent-500 hover:bg-accent-600 text-primary-900 font-semibold rounded-xl transition-all"
+              >
+                <i data-lucide="linkedin" class="w-5 h-5"></i>
+                <span>Join Newsletter</span>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Bottom -->
+        <div
+          class="border-t border-gray-800 pt-8 flex flex-col md:flex-row items-center justify-between gap-4"
+        >
+          <div class="flex items-center gap-4">
+            <img
+              src="images/logo3.png"
+              alt="Logo"
+              class="w-10 h-10 rounded-lg"
+            />
+            <p class="text-sm">
+              Copyright © <span id="year"></span> All rights reserved | Josie
+              Lawcastle
+            </p>
+          </div>
+
+          <div class="flex items-center gap-4">
+            <a
+              href="#"
+              class="w-10 h-10 bg-gray-800 hover:bg-accent-500 rounded-xl flex items-center justify-center text-gray-400 hover:text-white transition-all"
+            >
+              <i data-lucide="facebook" class="w-5 h-5"></i>
+            </a>
+            <a
+              href="#"
+              class="w-10 h-10 bg-gray-800 hover:bg-accent-500 rounded-xl flex items-center justify-center text-gray-400 hover:text-white transition-all"
+            >
+              <i data-lucide="twitter" class="w-5 h-5"></i>
+            </a>
+            <a
+              href="https://www.linkedin.com/in/josephine-aransiola"
+              target="_blank"
+              class="w-10 h-10 bg-gray-800 hover:bg-accent-500 rounded-xl flex items-center justify-center text-gray-400 hover:text-white transition-all"
+            >
+              <i data-lucide="linkedin" class="w-5 h-5"></i>
+            </a>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <!-- Back to Top -->
+    <button
+      id="back-to-top"
+      class="fixed bottom-8 right-8 w-14 h-14 bg-accent-500 hover:bg-accent-600 text-primary-900 rounded-2xl shadow-2xl shadow-accent-500/30 flex items-center justify-center opacity-0 invisible transition-all z-50"
+    >
+      <i data-lucide="chevron-up" class="w-6 h-6"></i>
+    </button>
+
+    <!-- Scripts -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+      // Initialize AOS
+      AOS.init({
+        duration: 800,
+        once: true,
+        offset: 100,
+      });
+
+      // Initialize Lucide Icons
+      lucide.createIcons();
+
+      // Mobile Menu Toggle
+      const mobileMenuBtn = document.getElementById("mobile-menu-btn");
+      const mobileMenu = document.getElementById("mobile-menu");
+
+      mobileMenuBtn.addEventListener("click", () => {
+        mobileMenu.classList.toggle("hidden");
+      });
+
+      // Close mobile menu on link click
+      mobileMenu.querySelectorAll("a").forEach((link) => {
+        link.addEventListener("click", () => {
+          mobileMenu.classList.add("hidden");
         });
-      </script>
-    </div> <!-- Closing div for id="page" -->
-  </div>
-   <!-- Added missing closing div for id="page" -->
+      });
+
+      // Back to Top Button
+      const backToTop = document.getElementById("back-to-top");
+
+      window.addEventListener("scroll", () => {
+        if (window.scrollY > 500) {
+          backToTop.classList.remove("opacity-0", "invisible");
+          backToTop.classList.add("opacity-100", "visible");
+        } else {
+          backToTop.classList.add("opacity-0", "invisible");
+          backToTop.classList.remove("opacity-100", "visible");
+        }
+      });
+
+      backToTop.addEventListener("click", () => {
+        window.scrollTo({ top: 0, behavior: "smooth" });
+      });
+
+      // Set current year
+      document.getElementById("year").textContent = new Date().getFullYear();
+
+      // Navbar scroll effect
+      const navbar = document.querySelector("nav");
+      window.addEventListener("scroll", () => {
+        if (window.scrollY > 50) {
+          navbar.classList.add("shadow-md");
+        } else {
+          navbar.classList.remove("shadow-md");
+        }
+      });
+
+      // Toggle Details for Practice Areas
+      function toggleDetails(id, button) {
+        const details = document.getElementById(id);
+        const btnText = button.querySelector(".btn-text");
+        const btnIcon = button.querySelector(".btn-icon");
+
+        if (details.classList.contains("hidden")) {
+          // Show details
+          details.classList.remove("hidden");
+          details.style.maxHeight = "0px";
+          details.style.overflow = "hidden";
+          details.style.transition =
+            "max-height 0.3s ease-out, opacity 0.3s ease-out";
+          details.style.opacity = "0";
+
+          // Trigger animation
+          requestAnimationFrame(() => {
+            details.style.maxHeight = details.scrollHeight + "px";
+            details.style.opacity = "1";
+          });
+
+          btnText.textContent = "Show Less";
+          btnIcon.style.transform = "rotate(180deg)";
+
+          // Re-initialize icons in expanded content
+          lucide.createIcons();
+        } else {
+          // Hide details
+          details.style.maxHeight = "0px";
+          details.style.opacity = "0";
+
+          setTimeout(() => {
+            details.classList.add("hidden");
+            details.style.maxHeight = "";
+            details.style.overflow = "";
+            details.style.transition = "";
+            details.style.opacity = "";
+          }, 300);
+
+          btnText.textContent = "Learn More";
+          btnIcon.style.transform = "rotate(0deg)";
+        }
+      }
+    </script>
   </body>
 </html>

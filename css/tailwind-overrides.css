@@ -1,0 +1,438 @@
+/* ========================================
+   PROFESSIONAL TAILWIND-BASED UI
+   Clean, Modern, Accessible Design
+   ======================================== */
+
+/* Base Resets */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Smooth Scroll */
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 100px;
+}
+
+/* Navigation - Professional & Clean */
+.ftco-nav {
+  background: rgba(255, 255, 255, 0.98) !important;
+  backdrop-filter: blur(12px);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.06);
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.03);
+  transition: all 0.3s ease;
+}
+
+.ftco-nav.scrolled {
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+.navbar-brand {
+  color: #111827 !important;
+  font-weight: 800 !important;
+  font-size: 1.25rem !important;
+}
+
+.nav-link {
+  color: #4b5563 !important;
+  font-weight: 600 !important;
+  transition: all 0.2s ease;
+  padding: 0.5rem 1rem !important;
+  border-radius: 0.5rem;
+}
+
+.nav-link:hover {
+  color: #2563eb !important;
+  background: #eff6ff;
+}
+
+.nav-item.active .nav-link {
+  color: #2563eb !important;
+  background: #dbeafe;
+}
+
+/* Hero Section - High Contrast */
+.overlay-gradient {
+  background: linear-gradient(
+    135deg,
+    rgba(15, 23, 42, 0.92) 0%,
+    rgba(30, 41, 59, 0.88) 50%,
+    rgba(51, 65, 85, 0.92) 100%
+  ) !important;
+}
+
+.slider-text-inner h1 {
+  color: #ffffff !important;
+  text-shadow: 0 2px 24px rgba(0, 0, 0, 0.4);
+  font-weight: 800 !important;
+}
+
+/* Buttons - Modern & Accessible */
+.btn-primary,
+.btn-learn {
+  background: #2563eb !important;
+  color: #ffffff !important;
+  font-weight: 700 !important;
+  padding: 1rem 2.5rem !important;
+  border-radius: 0.75rem !important;
+  border: none !important;
+  box-shadow: 0 4px 14px rgba(37, 99, 235, 0.4) !important;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1) !important;
+  text-transform: none !important;
+}
+
+.btn-primary:hover,
+.btn-learn:hover {
+  background: #1d4ed8 !important;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(37, 99, 235, 0.5) !important;
+}
+
+/* Cards - Clean & Professional */
+.services-wrap,
+.services,
+.team-member {
+  background: #ffffff !important;
+  border: 1px solid #e5e7eb !important;
+  border-radius: 1rem !important;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05) !important;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1) !important;
+  overflow: hidden;
+}
+
+.services-wrap:hover,
+.services:hover,
+.team-member:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.12) !important;
+  border-color: #d1d5db !important;
+}
+
+/* Card Top Border Accent */
+.services-wrap::before,
+.team-member::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: linear-gradient(90deg, #2563eb, #3b82f6);
+  transform: scaleX(0);
+  transition: transform 0.3s ease;
+}
+
+.services-wrap:hover::before,
+.team-member:hover::before {
+  transform: scaleX(1);
+}
+
+/* Text Contrast - WCAG AA Compliant */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  color: #111827 !important;
+  font-weight: 800 !important;
+  letter-spacing: -0.025em;
+}
+
+p,
+li {
+  color: #4b5563 !important;
+  line-height: 1.75;
+}
+
+/* Read More Links */
+.read-more {
+  color: #2563eb !important;
+  font-weight: 700 !important;
+  text-decoration: none !important;
+  transition: all 0.2s ease;
+}
+
+.read-more:hover {
+  color: #1d4ed8 !important;
+  transform: translateX(4px);
+}
+
+/* Section Backgrounds */
+.practice-section {
+  background: #f9fafb !important;
+}
+
+#team {
+  background: #f3f4f6 !important;
+}
+
+.other-services-section {
+  background: #ffffff !important;
+}
+
+/* Images */
+.img-fluid {
+  border-radius: 1rem;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+}
+
+.img-fluid:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.15);
+}
+
+/* Team Member Cards */
+.team-member img {
+  width: 100%;
+  height: 400px;
+  object-fit: cover;
+  transition: transform 0.4s ease;
+}
+
+.team-member:hover img {
+  transform: scale(1.05);
+}
+
+.team-member .card-title {
+  color: #111827 !important;
+  font-weight: 700 !important;
+  font-size: 1.25rem;
+}
+
+.team-member .card-text {
+  color: #6b7280 !important;
+}
+
+/* Social Icons */
+.ftco-social-icons {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  gap: 0.75rem;
+}
+
+.ftco-social-icons li a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  background: #f3f4f6;
+  border-radius: 0.75rem;
+  color: #6b7280;
+  transition: all 0.3s ease;
+}
+
+.ftco-social-icons li a:hover {
+  background: #2563eb;
+  color: #ffffff;
+  transform: translateY(-3px);
+}
+
+/* Forms */
+.form-control {
+  border: 2px solid #e5e7eb !important;
+  border-radius: 0.75rem !important;
+  padding: 0.875rem 1.25rem !important;
+  transition: all 0.2s ease !important;
+  background: #ffffff !important;
+  color: #111827 !important;
+}
+
+.form-control:focus {
+  border-color: #2563eb !important;
+  box-shadow: 0 0 0 4px rgba(37, 99, 235, 0.1) !important;
+  outline: none !important;
+}
+
+.form-control::placeholder {
+  color: #9ca3af !important;
+}
+
+/* Contact Section */
+#contact {
+  background: linear-gradient(135deg, #1e3a8a 0%, #1e40af 100%) !important;
+}
+
+#contact h2,
+#contact h3,
+#contact p,
+#contact label {
+  color: #ffffff !important;
+}
+
+/* Footer */
+footer {
+  background: #111827 !important;
+  color: #d1d5db !important;
+}
+
+footer a {
+  color: #9ca3af !important;
+  transition: color 0.2s ease;
+}
+
+footer a:hover {
+  color: #3b82f6 !important;
+}
+
+/* Responsive Typography */
+@media (max-width: 768px) {
+  .slider-text-inner h1 {
+    font-size: 1.875rem !important;
+  }
+
+  h2 {
+    font-size: 2rem !important;
+  }
+
+  h3 {
+    font-size: 1.5rem !important;
+  }
+}
+
+@media (max-width: 640px) {
+  .slider-text-inner h1 {
+    font-size: 1.5rem !important;
+  }
+
+  .btn-primary,
+  .btn-learn {
+    padding: 0.75rem 1.5rem !important;
+    font-size: 0.875rem !important;
+  }
+}
+
+/* Mobile Navigation */
+@media (max-width: 991px) {
+  .navbar-collapse {
+    background: #ffffff !important;
+    border: 1px solid #e5e7eb !important;
+    border-radius: 0.75rem !important;
+    padding: 1rem !important;
+    margin-top: 1rem !important;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1) !important;
+  }
+
+  .nav-link {
+    padding: 0.75rem 1rem !important;
+    margin-bottom: 0.25rem;
+  }
+}
+
+/* Loading State */
+.ftco-loader {
+  background: #ffffff !important;
+}
+
+/* Accessibility - Focus States */
+*:focus-visible {
+  outline: 3px solid #2563eb !important;
+  outline-offset: 2px !important;
+}
+
+/* Smooth Transitions */
+a,
+button,
+.nav-link,
+.btn,
+.card {
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1) !important;
+}
+
+/* Print Styles */
+@media print {
+  .ftco-nav,
+  .btn,
+  footer,
+  .scroll-to-top {
+    display: none !important;
+  }
+}
+
+/* SVG Icons */
+svg {
+  transition: all 0.3s ease;
+}
+
+.services-wrap:hover svg {
+  transform: scale(1.1);
+  color: #2563eb;
+}
+
+/* Better List Styling */
+ul li {
+  margin-bottom: 0.75rem;
+}
+
+ul li::marker {
+  color: #2563eb;
+}
+
+/* Section Titles with Underline */
+.section-title {
+  position: relative;
+  display: inline-block;
+  padding-bottom: 1rem;
+}
+
+.section-title::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 60px;
+  height: 4px;
+  background: #2563eb;
+  border-radius: 2px;
+}
+
+/* Animation Utilities */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fade-in-up {
+  animation: fadeInUp 0.6s ease-out;
+}
+
+/* Mission/Vision Cards Enhancement */
+.services .icon {
+  color: #2563eb !important;
+  font-size: 3rem !important;
+}
+
+.services h3 {
+  color: #111827 !important;
+  font-weight: 700 !important;
+}
+
+.services h3 a {
+  color: inherit !important;
+  text-decoration: none !important;
+}
+
+.services p {
+  color: #6b7280 !important;
+}

@@ -202,6 +202,25 @@
         transform: scale(1.2);
       }
 
+      /* Hero Content Transitions */
+      .hero-content {
+        position: absolute;
+        inset: 0;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        opacity: 0;
+        transition: opacity 0.8s ease-in-out;
+        pointer-events: none;
+      }
+
+      .hero-content.active {
+        opacity: 1;
+        position: relative;
+        pointer-events: auto;
+      }
+
       /* =====================================================
          MOBILE RESPONSIVE OVERRIDES
          ===================================================== */
@@ -582,6 +601,11 @@
               >Reviews</a
             >
             <a
+              href="events.html"
+              class="px-4 py-2 text-sm font-semibold text-gray-600 hover:text-accent-600 hover:bg-accent-50 rounded-lg transition-all"
+              >Events</a
+            >
+            <a
               href="#contact"
               class="ml-2 px-6 py-2.5 text-sm font-bold text-primary-900 bg-accent-500 hover:bg-accent-600 rounded-xl shadow-lg shadow-accent-500/30 hover:shadow-accent-500/40 transition-all"
               >Contact Us</a
@@ -620,6 +644,11 @@
             href="#reviews"
             class="block px-4 py-3 text-sm font-semibold text-gray-600 hover:bg-accent-50 rounded-lg transition-all"
             >Reviews</a
+          >
+          <a
+            href="events.html"
+            class="block px-4 py-3 text-sm font-semibold text-gray-600 hover:bg-accent-50 rounded-lg transition-all"
+            >Events</a
           >
           <a
             href="#contact"
@@ -695,22 +724,66 @@
         ></button>
       </div>
 
-      <!-- Content -->
+      <!-- Dynamic Content Container -->
       <div
         class="relative z-10 max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center py-32"
         data-aos="fade-up"
         data-aos-duration="1000"
       >
-        <h1
-          class="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-white leading-tight mb-8"
-        >
-          Get all your business, compliance, and corporate legal needs
-          seamlessly taken care of by us and boast of a thriving result.
-        </h1>
-        <p class="text-lg text-gray-300 mb-10 max-w-2xl mx-auto">
-          Nigeria's trusted law firm for corporate governance, intellectual
-          property, and real estate legal solutions.
-        </p>
+        <!-- Slide 1 Content -->
+        <div class="hero-content active" data-content="0">
+          <h1
+            class="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-white leading-tight mb-8"
+          >
+            Get all your business, compliance, and corporate legal needs
+            seamlessly taken care of by us and boast of a thriving result.
+          </h1>
+          <p class="text-lg text-gray-300 mb-10 max-w-2xl mx-auto">
+            Nigeria's trusted law firm for corporate governance, intellectual
+            property, and real estate legal solutions.
+          </p>
+        </div>
+
+        <!-- Slide 2 Content -->
+        <div class="hero-content" data-content="1">
+          <h1
+            class="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-white leading-tight mb-8"
+          >
+            Expert Legal Representation for Your Business Growth and Success
+          </h1>
+          <p class="text-lg text-gray-300 mb-10 max-w-2xl mx-auto">
+            Comprehensive corporate services, contract drafting, and regulatory
+            compliance solutions tailored to your needs.
+          </p>
+        </div>
+
+        <!-- Slide 3 Content -->
+        <div class="hero-content" data-content="2">
+          <h1
+            class="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-white leading-tight mb-8"
+          >
+            Protecting Your Intellectual Property and Real Estate Investments
+          </h1>
+          <p class="text-lg text-gray-300 mb-10 max-w-2xl mx-auto">
+            Strategic legal counsel for trademarks, patents, property
+            transactions, and asset protection.
+          </p>
+        </div>
+
+        <!-- Slide 4 Content -->
+        <div class="hero-content" data-content="3">
+          <h1
+            class="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-white leading-tight mb-8"
+          >
+            A Lawfirm Extraordinaire Committed to Excellence and Integrity
+          </h1>
+          <p class="text-lg text-gray-300 mb-10 max-w-2xl mx-auto">
+            Dedicated legal professionals delivering exceptional results with
+            professionalism and innovation.
+          </p>
+        </div>
+
+        <!-- CTA Button (stays consistent) -->
         <a
           href="#contact"
           class="inline-flex items-center gap-2 px-8 py-4 bg-accent-500 hover:bg-accent-600 text-primary-900 font-bold text-lg rounded-2xl shadow-2xl shadow-accent-500/30 hover:shadow-accent-500/50 transform hover:-translate-y-1 transition-all"
@@ -1354,6 +1427,19 @@
               <p class="text-accent-600 text-sm font-medium mb-4">
                 Founder & Principal Partner
               </p>
+              <p
+                class="text-gray-600 text-sm leading-relaxed mb-4 text-left px-2"
+              >
+                <strong
+                  >She is a seasoned Business & IP Lawyer, an Author and founder
+                  of the prestigious lawfirm, Josie LawCastle. Presently, the
+                  Lead Legal at the firm.</strong
+                >
+                <br /><br />
+                Her legal expertise spans across different fields of law
+                including business, intellectual property, real estate, and
+                corporate governance.
+              </p>
               <div class="flex justify-center gap-3">
                 <a
                   href="mailto:jlawcastle247@gmail.com"
@@ -1957,18 +2043,21 @@
 
       // Hero Carousel
       const heroSlides = document.querySelectorAll(".hero-slide");
+      const heroContents = document.querySelectorAll(".hero-content");
       const carouselDots = document.querySelectorAll(".carousel-dot");
       let currentSlide = 0;
       let carouselInterval;
 
       function goToSlide(index) {
-        // Remove active class from all slides and dots
+        // Remove active class from all slides, contents, and dots
         heroSlides.forEach((slide) => slide.classList.remove("active"));
+        heroContents.forEach((content) => content.classList.remove("active"));
         carouselDots.forEach((dot) => dot.classList.remove("active"));
 
-        // Set new active slide and dot
+        // Set new active slide, content, and dot
         currentSlide = index;
         heroSlides[currentSlide].classList.add("active");
+        heroContents[currentSlide].classList.add("active");
         carouselDots[currentSlide].classList.add("active");
       }
 

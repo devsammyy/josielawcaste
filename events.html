@@ -1,0 +1,685 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>Events — Josie Lawcastle</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta
+      name="description"
+      content="Discover upcoming training workshops and professional development events by Josie Lawcastle - AbledtoEnAbled programs for legal professionals and vocational training."
+    />
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              primary: {
+                50: "#f0f4f8",
+                100: "#d9e2ec",
+                200: "#bcccdc",
+                300: "#9fb3c8",
+                400: "#829ab1",
+                500: "#627d98",
+                600: "#486581",
+                700: "#334e68",
+                800: "#243b53",
+                900: "#102a43",
+              },
+              accent: {
+                50: "#fdf8f0",
+                100: "#f9ecd8",
+                200: "#f2d9b0",
+                300: "#e8c285",
+                400: "#dba855",
+                500: "#c9a55c",
+                600: "#b08d3e",
+                700: "#8c6d2f",
+                800: "#6b5324",
+                900: "#4d3b1a",
+              },
+            },
+            fontFamily: {
+              sans: ["Inter", "system-ui", "sans-serif"],
+            },
+          },
+        },
+      };
+    </script>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- AOS Animation -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
+
+    <style>
+      * {
+        box-sizing: border-box;
+      }
+
+      html {
+        scroll-behavior: smooth;
+        overflow-x: hidden;
+      }
+
+      body {
+        font-family: "Inter", sans-serif;
+        overflow-x: hidden;
+        max-width: 100vw;
+      }
+
+      .nav-blur {
+        backdrop-filter: blur(12px);
+        -webkit-backdrop-filter: blur(12px);
+      }
+
+      .hero-gradient {
+        background: linear-gradient(
+          135deg,
+          #102a43 0%,
+          #243b53 50%,
+          #334e68 100%
+        );
+      }
+
+      .card-hover {
+        transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+      }
+
+      @media (min-width: 768px) {
+        .card-hover:hover {
+          transform: translateY(-12px);
+        }
+      }
+
+      .text-gold-gradient {
+        background: linear-gradient(
+          135deg,
+          #c9a55c 0%,
+          #dfc87d 50%,
+          #c9a55c 100%
+        );
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+      }
+
+      .event-card {
+        position: relative;
+        overflow: hidden;
+      }
+
+      .event-card::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: linear-gradient(
+          135deg,
+          rgba(201, 165, 92, 0.1) 0%,
+          rgba(16, 42, 67, 0.05) 100%
+        );
+        opacity: 0;
+        transition: opacity 0.3s ease;
+      }
+
+      .event-card:hover::before {
+        opacity: 1;
+      }
+
+      .event-image {
+        transition: transform 0.5s ease;
+      }
+
+      .event-card:hover .event-image {
+        transform: scale(1.02);
+      }
+
+      /* Responsive overrides */
+      @media (max-width: 767px) {
+        .py-24 {
+          padding-top: 3rem !important;
+          padding-bottom: 3rem !important;
+        }
+
+        h1.text-5xl {
+          font-size: 2rem !important;
+        }
+
+        h2.text-4xl {
+          font-size: 1.75rem !important;
+        }
+      }
+    </style>
+  </head>
+
+  <body class="bg-gray-50 text-gray-700 antialiased">
+    <!-- Navigation -->
+    <nav
+      class="fixed top-0 left-0 right-0 z-50 nav-blur bg-white/95 border-b border-gray-100 shadow-sm"
+    >
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex items-center justify-between h-20">
+          <!-- Logo -->
+          <a href="index.html" class="flex items-center gap-4 group">
+            <img
+              src="images/logo3.png"
+              alt="Josie Lawcastle Logo"
+              class="w-12 h-12 rounded-xl border-2 border-gray-100 group-hover:border-accent-500 transition-colors shadow-sm"
+            />
+            <div>
+              <span
+                class="text-xl lg:text-2xl font-extrabold text-primary-900 group-hover:text-accent-600 transition-colors"
+                >JOSIE LAWCASTLE</span
+              >
+              <p
+                class="text-xs text-accent-600 font-semibold tracking-widest uppercase"
+              >
+                A Lawfirm Extraordinaire
+              </p>
+            </div>
+          </a>
+
+          <!-- Mobile Menu Button -->
+          <button
+            id="mobile-menu-btn"
+            class="lg:hidden p-2 rounded-lg hover:bg-gray-100 transition-colors"
+          >
+            <i data-lucide="menu" class="w-6 h-6 text-primary-900"></i>
+          </button>
+
+          <!-- Desktop Navigation -->
+          <div class="hidden lg:flex items-center gap-1">
+            <a
+              href="index.html"
+              class="px-4 py-2 text-sm font-semibold text-gray-600 hover:text-accent-600 hover:bg-accent-50 rounded-lg transition-all"
+              >Home</a
+            >
+            <a
+              href="index.html#about"
+              class="px-4 py-2 text-sm font-semibold text-gray-600 hover:text-accent-600 hover:bg-accent-50 rounded-lg transition-all"
+              >About</a
+            >
+            <a
+              href="index.html#practice"
+              class="px-4 py-2 text-sm font-semibold text-gray-600 hover:text-accent-600 hover:bg-accent-50 rounded-lg transition-all"
+              >Practice Areas</a
+            >
+            <a
+              href="index.html#team"
+              class="px-4 py-2 text-sm font-semibold text-gray-600 hover:text-accent-600 hover:bg-accent-50 rounded-lg transition-all"
+              >Our Team</a
+            >
+            <a
+              href="index.html#reviews"
+              class="px-4 py-2 text-sm font-semibold text-gray-600 hover:text-accent-600 hover:bg-accent-50 rounded-lg transition-all"
+              >Reviews</a
+            >
+            <a
+              href="events.html"
+              class="px-4 py-2 text-sm font-semibold text-primary-900 hover:text-accent-600 hover:bg-accent-50 rounded-lg transition-all"
+              >Events</a
+            >
+            <a
+              href="index.html#contact"
+              class="ml-2 px-6 py-2.5 text-sm font-bold text-primary-900 bg-accent-500 hover:bg-accent-600 rounded-xl shadow-lg shadow-accent-500/30 hover:shadow-accent-500/40 transition-all"
+              >Contact Us</a
+            >
+          </div>
+        </div>
+      </div>
+
+      <!-- Mobile Menu -->
+      <div
+        id="mobile-menu"
+        class="hidden lg:hidden bg-white border-t border-gray-100 shadow-lg"
+      >
+        <div class="px-4 py-4 space-y-2">
+          <a
+            href="index.html"
+            class="block px-4 py-3 text-sm font-semibold text-gray-600 hover:bg-accent-50 rounded-lg transition-all"
+            >Home</a
+          >
+          <a
+            href="index.html#about"
+            class="block px-4 py-3 text-sm font-semibold text-gray-600 hover:bg-accent-50 rounded-lg transition-all"
+            >About</a
+          >
+          <a
+            href="index.html#practice"
+            class="block px-4 py-3 text-sm font-semibold text-gray-600 hover:bg-accent-50 rounded-lg transition-all"
+            >Practice Areas</a
+          >
+          <a
+            href="index.html#team"
+            class="block px-4 py-3 text-sm font-semibold text-gray-600 hover:bg-accent-50 rounded-lg transition-all"
+            >Our Team</a
+          >
+          <a
+            href="index.html#reviews"
+            class="block px-4 py-3 text-sm font-semibold text-gray-600 hover:bg-accent-50 rounded-lg transition-all"
+            >Reviews</a
+          >
+          <a
+            href="events.html"
+            class="block px-4 py-3 text-sm font-semibold text-primary-900 hover:bg-accent-50 rounded-lg transition-all"
+            >Events</a
+          >
+          <a
+            href="index.html#contact"
+            class="block px-4 py-3 text-sm font-bold text-center text-primary-900 bg-accent-500 hover:bg-accent-600 rounded-xl transition-all"
+            >Contact Us</a
+          >
+        </div>
+      </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="relative pt-32 pb-20 hero-gradient">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+        <div data-aos="fade-up" data-aos-duration="1000">
+          <div class="inline-block mb-6">
+            <span
+              class="px-4 py-2 bg-accent-500/20 text-accent-300 text-sm font-bold rounded-full border border-accent-500/30"
+            >
+              <i data-lucide="calendar" class="w-4 h-4 inline mr-2"></i>
+              Upcoming Events
+            </span>
+          </div>
+          <h1
+            class="text-5xl lg:text-6xl font-extrabold text-white leading-tight mb-6"
+          >
+            Professional Development
+            <span class="text-gold-gradient">Workshops</span>
+          </h1>
+          <p class="text-xl text-gray-300 max-w-3xl mx-auto mb-8">
+            Join our transformative training programs designed to empower young
+            lawyers, female professionals, and aspiring entrepreneurs with
+            practical skills and knowledge.
+          </p>
+        </div>
+      </div>
+
+      <!-- Decorative Elements -->
+      <div
+        class="absolute bottom-0 left-0 right-0 h-20 bg-gradient-to-t from-gray-50 to-transparent"
+      ></div>
+    </section>
+
+    <!-- Events Section -->
+    <section class="py-24 bg-gray-50">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <!-- Section Header -->
+        <div class="text-center mb-16" data-aos="fade-up">
+          <h2 class="text-4xl lg:text-5xl font-extrabold text-primary-900 mb-4">
+            AbledtoEnAbled Series
+          </h2>
+          <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+            Comprehensive training workshops combining legal expertise and
+            vocational skills to enable your professional growth.
+          </p>
+        </div>
+
+        <!-- Events Grid -->
+        <div class="grid lg:grid-cols-2 gap-12">
+          <!-- Event 1: AbledtoEnAbled 2.0 -->
+          <div
+            class="event-card card-hover bg-white rounded-3xl shadow-2xl overflow-hidden border border-gray-100"
+            data-aos="fade-up"
+            data-aos-delay="100"
+          >
+            <div class="overflow-hidden">
+              <img
+                src="images/event1.jpg"
+                alt="AbledtoEnAbled 2.0 - Virtual Legal Professional Workshop"
+                class="event-image w-full h-auto object-cover"
+              />
+            </div>
+            <div class="p-8">
+              <div class="flex items-center gap-3 mb-4">
+                <span
+                  class="px-3 py-1 bg-blue-100 text-blue-700 text-xs font-bold rounded-full"
+                >
+                  LEGAL WORKSHOP
+                </span>
+                <span
+                  class="px-3 py-1 bg-green-100 text-green-700 text-xs font-bold rounded-full"
+                >
+                  VIRTUAL
+                </span>
+              </div>
+              <h3 class="text-2xl font-bold text-primary-900 mb-3">
+                AbledtoEnAbled 2.0
+              </h3>
+              <p class="text-gray-600 mb-6 leading-relaxed">
+                A 2-Day Virtual Legal Professional Workshop designed for young
+                lawyers and female lawyers. Gain practical skills in trademark
+                registration, PENCOM registration, tax clearance certificates,
+                and digital law practice training.
+              </p>
+
+              <!-- Event Details -->
+              <div class="space-y-3 mb-6">
+                <div class="flex items-start gap-3">
+                  <i
+                    data-lucide="calendar-days"
+                    class="w-5 h-5 text-accent-600 mt-0.5 flex-shrink-0"
+                  ></i>
+                  <div>
+                    <p class="font-semibold text-primary-900">Date</p>
+                    <p class="text-gray-600">
+                      Thursday, 27th & Friday, 28th February 2025
+                    </p>
+                  </div>
+                </div>
+                <div class="flex items-start gap-3">
+                  <i
+                    data-lucide="clock"
+                    class="w-5 h-5 text-accent-600 mt-0.5 flex-shrink-0"
+                  ></i>
+                  <div>
+                    <p class="font-semibold text-primary-900">Time</p>
+                    <p class="text-gray-600">7:00 PM Prompt</p>
+                  </div>
+                </div>
+                <div class="flex items-start gap-3">
+                  <i
+                    data-lucide="video"
+                    class="w-5 h-5 text-accent-600 mt-0.5 flex-shrink-0"
+                  ></i>
+                  <div>
+                    <p class="font-semibold text-primary-900">Venue</p>
+                    <p class="text-gray-600">WhatsApp & Google Meet</p>
+                  </div>
+                </div>
+                <div class="flex items-start gap-3">
+                  <i
+                    data-lucide="tag"
+                    class="w-5 h-5 text-accent-600 mt-0.5 flex-shrink-0"
+                  ></i>
+                  <div>
+                    <p class="font-semibold text-primary-900">
+                      Registration Fee
+                    </p>
+                    <p class="text-gray-600">
+                      Early Bird: ₦20,000 (Closes Feb. 20th) | Late Reg: ₦30,000
+                      (Feb. 21st-26th)
+                    </p>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Perks -->
+              <div class="bg-accent-50 rounded-xl p-4 mb-6">
+                <p class="font-semibold text-primary-900 mb-2">
+                  <i data-lucide="gift" class="w-4 h-4 inline mr-2"></i>
+                  Perks Include:
+                </p>
+                <ul class="text-sm text-gray-700 space-y-1">
+                  <li>✓ Proficiency Certificate</li>
+                  <li>✓ Access to FREE 1 Month Mentorship</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          <!-- Event 2: AbledtoEnAbled 4.0 -->
+          <div
+            class="event-card card-hover bg-white rounded-3xl shadow-2xl overflow-hidden border border-gray-100"
+            data-aos="fade-up"
+            data-aos-delay="200"
+          >
+            <div class="overflow-hidden">
+              <img
+                src="images/event2.png"
+                alt="AbledtoEnAbled 4.0 - Virtual Vocational Training"
+                class="event-image w-full h-auto object-cover"
+              />
+            </div>
+            <div class="p-8">
+              <div class="flex items-center gap-3 mb-4">
+                <span
+                  class="px-3 py-1 bg-purple-100 text-purple-700 text-xs font-bold rounded-full"
+                >
+                  VOCATIONAL TRAINING
+                </span>
+                <span
+                  class="px-3 py-1 bg-green-100 text-green-700 text-xs font-bold rounded-full"
+                >
+                  VIRTUAL
+                </span>
+              </div>
+              <h3 class="text-2xl font-bold text-primary-900 mb-3">
+                AbledtoEnAbled 4.0
+              </h3>
+              <p class="text-gray-600 mb-6 leading-relaxed">
+                A 2-Day Virtual Vocational Training program offering practical
+                courses in Graphics Design, Make-Up Training, and Fashion
+                Design. Perfect for aspiring entrepreneurs and creative
+                professionals.
+              </p>
+
+              <!-- Event Details -->
+              <div class="space-y-3 mb-6">
+                <div class="flex items-start gap-3">
+                  <i
+                    data-lucide="calendar-days"
+                    class="w-5 h-5 text-accent-600 mt-0.5 flex-shrink-0"
+                  ></i>
+                  <div>
+                    <p class="font-semibold text-primary-900">Date</p>
+                    <p class="text-gray-600">
+                      Friday, 12th & Saturday, 13th December 2025
+                    </p>
+                  </div>
+                </div>
+                <div class="flex items-start gap-3">
+                  <i
+                    data-lucide="clock"
+                    class="w-5 h-5 text-accent-600 mt-0.5 flex-shrink-0"
+                  ></i>
+                  <div>
+                    <p class="font-semibold text-primary-900">Time</p>
+                    <p class="text-gray-600">6:00 PM</p>
+                  </div>
+                </div>
+                <div class="flex items-start gap-3">
+                  <i
+                    data-lucide="video"
+                    class="w-5 h-5 text-accent-600 mt-0.5 flex-shrink-0"
+                  ></i>
+                  <div>
+                    <p class="font-semibold text-primary-900">Venue</p>
+                    <p class="text-gray-600">Virtual</p>
+                  </div>
+                </div>
+                <div class="flex items-start gap-3">
+                  <i
+                    data-lucide="tag"
+                    class="w-5 h-5 text-accent-600 mt-0.5 flex-shrink-0"
+                  ></i>
+                  <div>
+                    <p class="font-semibold text-primary-900">
+                      Registration Fee
+                    </p>
+                    <p class="text-gray-600">
+                      ₦10,000 per course (Registration closes Saturday, Dec. 6th
+                      2025)
+                    </p>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Courses -->
+              <div class="bg-purple-50 rounded-xl p-4 mb-6">
+                <p class="font-semibold text-primary-900 mb-2">
+                  <i data-lucide="book-open" class="w-4 h-4 inline mr-2"></i>
+                  Courses Available:
+                </p>
+                <ul class="text-sm text-gray-700 space-y-1">
+                  <li>✓ Graphics Design Training (Practical)</li>
+                  <li>✓ Make-Up Training (Practical)</li>
+                  <li>
+                    ✓ Fashion Design (Practicals on basics of fashion designing,
+                    Corsetry etc)
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Contact Info -->
+        <div
+          class="mt-16 text-center bg-white rounded-3xl p-8 shadow-lg border border-gray-100"
+          data-aos="fade-up"
+          data-aos-delay="300"
+        >
+          <h3 class="text-2xl font-bold text-primary-900 mb-4">
+            Need More Information?
+          </h3>
+          <p class="text-gray-600 mb-6">
+            For further enquiries about our events and registration process,
+            please contact us:
+          </p>
+          <div
+            class="flex flex-col sm:flex-row gap-4 justify-center items-center"
+          >
+            <a
+              href="mailto:josielawcastle247@gmail.com"
+              class="inline-flex items-center gap-2 px-6 py-3 bg-primary-900 hover:bg-primary-800 text-white font-semibold rounded-xl transition-all"
+            >
+              <i data-lucide="mail" class="w-5 h-5"></i>
+              josielawcastle247@gmail.com
+            </a>
+            <a
+              href="tel:+2349014305085"
+              class="inline-flex items-center gap-2 px-6 py-3 bg-accent-500 hover:bg-accent-600 text-primary-900 font-semibold rounded-xl transition-all"
+            >
+              <i data-lucide="phone" class="w-5 h-5"></i>
+              +234 901 430 5085
+            </a>
+          </div>
+          <p class="text-sm text-gray-500 mt-6">
+            Payment: UBA Josie Lawcastle 1025896902
+            <br />
+            Send payment receipt to 09014305085 as payment confirmation
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-primary-900 text-white py-12">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center">
+          <div class="flex items-center justify-center gap-3 mb-4">
+            <img
+              src="images/logo3.png"
+              alt="Josie Lawcastle Logo"
+              class="w-12 h-12 rounded-xl"
+            />
+            <div class="text-left">
+              <p class="text-xl font-extrabold">JOSIE LAWCASTLE</p>
+              <p class="text-xs text-accent-400 font-semibold tracking-widest">
+                A LAWFIRM EXTRAORDINAIRE
+              </p>
+            </div>
+          </div>
+          <p class="text-gray-400 mb-6">
+            Empowering professionals through quality legal services and
+            transformative training programs.
+          </p>
+          <div class="flex justify-center gap-4 mb-6">
+            <a
+              href="mailto:josielawcastle247@gmail.com"
+              class="w-10 h-10 bg-gray-800 hover:bg-accent-500 rounded-xl flex items-center justify-center transition-all"
+            >
+              <i data-lucide="mail" class="w-5 h-5"></i>
+            </a>
+            <a
+              href="tel:+2349014305085"
+              class="w-10 h-10 bg-gray-800 hover:bg-accent-500 rounded-xl flex items-center justify-center transition-all"
+            >
+              <i data-lucide="phone" class="w-5 h-5"></i>
+            </a>
+          </div>
+          <p class="text-sm text-gray-500">
+            &copy; <span id="year"></span> Josie Lawcastle. All rights reserved.
+          </p>
+        </div>
+      </div>
+    </footer>
+
+    <!-- Back to Top -->
+    <button
+      id="back-to-top"
+      class="fixed bottom-8 right-8 w-14 h-14 bg-accent-500 hover:bg-accent-600 text-primary-900 rounded-2xl shadow-2xl shadow-accent-500/30 flex items-center justify-center opacity-0 invisible transition-all z-50"
+    >
+      <i data-lucide="chevron-up" class="w-6 h-6"></i>
+    </button>
+
+    <!-- Scripts -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+      // Initialize AOS
+      AOS.init({
+        duration: 800,
+        once: true,
+        offset: 100,
+      });
+
+      // Initialize Lucide Icons
+      lucide.createIcons();
+
+      // Mobile Menu Toggle
+      const mobileMenuBtn = document.getElementById("mobile-menu-btn");
+      const mobileMenu = document.getElementById("mobile-menu");
+
+      mobileMenuBtn.addEventListener("click", () => {
+        mobileMenu.classList.toggle("hidden");
+      });
+
+      // Close mobile menu on link click
+      mobileMenu.querySelectorAll("a").forEach((link) => {
+        link.addEventListener("click", () => {
+          mobileMenu.classList.add("hidden");
+        });
+      });
+
+      // Back to Top Button
+      const backToTop = document.getElementById("back-to-top");
+
+      window.addEventListener("scroll", () => {
+        if (window.scrollY > 500) {
+          backToTop.classList.remove("opacity-0", "invisible");
+          backToTop.classList.add("opacity-100", "visible");
+        } else {
+          backToTop.classList.add("opacity-0", "invisible");
+          backToTop.classList.remove("opacity-100", "visible");
+        }
+      });
+
+      backToTop.addEventListener("click", () => {
+        window.scrollTo({ top: 0, behavior: "smooth" });
+      });
+
+      // Set current year
+      document.getElementById("year").textContent = new Date().getFullYear();
+    </script>
+  </body>
+</html>
